@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Icon, { Crest } from './components/Icon.jsx';
+import MusashiLife from './components/MusashiLife.jsx';
 import Artwork from './components/Artwork.jsx';
 import { artworks } from './data/artworks.js';
 
@@ -147,6 +148,7 @@ export default function App() {
       <Header />
       <main id="main-content" tabIndex={-1}>
         <Hero />
+        <MusashiLife />
       </main>
       <Footer />
     </>

@@ -98,6 +98,22 @@ summary:focus-visible,
   color: var(--red);
   line-height: 1.7;
 }
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 45px;
+  margin-bottom: 45px;
+}
+.section-heading h2 {
+  margin-bottom: 0;
+  max-width: 700px;
+}
+.section-heading > p {
+  max-width: 390px;
+  color: var(--muted);
+  margin: 0;
+}
 .editorial-link,
 .text-button {
   font-size: 14px;
@@ -273,6 +289,78 @@ summary:focus-visible,
   max-height: var(--painting-height);
   object-fit: contain;
 }
+.life-section {
+  padding-top: 82px;
+  padding-bottom: 82px;
+}
+.life-prose {
+  min-width: 0;
+}
+.life-chapter {
+  padding-bottom: 55px;
+  margin-bottom: 47px;
+  border-bottom: 1px solid var(--line);
+}
+.chapter-year {
+  font-size: 14px;
+  color: var(--red);
+  margin-bottom: 12px;
+}
+.life-chapter h3 {
+  font-size: 42px;
+  margin-bottom: 25px;
+}
+.life-chapter > p:not(.chapter-year),
+.life-evidence > p,
+.profile-prose p {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 68ch;
+  color: #444a3f;
+}
+.life-chapter .artwork {
+  margin: 32px 0;
+}
+.life-chapter .artwork img {
+  max-height: 470px;
+  object-fit: contain;
+  background: #e9e1d2;
+}
+.chapter-sources {
+  display: block;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  margin-top: 27px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.chapter-sources summary {
+  color: var(--red);
+  cursor: pointer;
+  width: fit-content;
+}
+.chapter-sources ul {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.chapter-sources a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.life-evidence {
+  background: #e9e3d7;
+  border-left: 2px solid var(--red);
+  padding: 28px;
+}
+.life-evidence h3 {
+  font-size: 29px;
+}
+.life-evidence p {
+  margin-bottom: 0;
+}
 .site-footer {
   border-top: 1px solid var(--line);
   padding-top: 35px;
@@ -343,6 +431,13 @@ summary:focus-visible,
     padding-left: 24px;
     padding-right: 24px;
   }
+  .section-heading {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .section-heading > p {
+    margin-top: 20px;
+  }
   .hero {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -366,6 +461,24 @@ summary:focus-visible,
   }
   .hero-artwork {
     --painting-height: 540px;
+  }
+  .life-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .life-chapter[id] {
+    padding-bottom: 34px;
+    margin-bottom: 33px;
+    scroll-margin-top: 135px;
+  }
+  .life-chapter h3 {
+    font-size: 36px;
+  }
+  .life-evidence {
+    padding: 22px;
+  }
+  .life-evidence h3 {
+    font-size: 30px;
   }
   .site-footer {
     flex-direction: column;
