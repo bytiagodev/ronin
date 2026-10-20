@@ -293,6 +293,47 @@ summary:focus-visible,
   padding-top: 82px;
   padding-bottom: 82px;
 }
+.life-layout {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 790px);
+  gap: 8%;
+  justify-content: space-between;
+  align-items: start;
+}
+.life-navigation {
+  position: sticky;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+  background: var(--paper);
+}
+.life-navigation button {
+  background: transparent;
+  border-left: 2px solid var(--line);
+  padding: 9px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+}
+.life-navigation button > span:first-child {
+  font-family: var(--serif);
+  font-size: 23px;
+  color: #51574a;
+}
+.life-navigation button > span:last-child {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+.life-navigation button[aria-current] {
+  border-color: var(--red);
+  background: #e9e3d7;
+}
+.life-navigation button[aria-current] > span:first-child {
+  color: var(--red);
+}
 .life-prose {
   min-width: 0;
 }
@@ -406,6 +447,10 @@ summary:focus-visible,
   .hero {
     gap: 35px;
   }
+  .life-layout {
+    grid-template-columns: 175px minmax(0, 1fr);
+    gap: 5%;
+  }
 }
 @media (max-width: 760px) {
   .section-shell {
@@ -465,6 +510,40 @@ summary:focus-visible,
   .life-section {
     padding-top: 48px;
     padding-bottom: 48px;
+  }
+  .life-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .life-navigation {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: var(--paper);
+    flex-direction: row;
+    overflow-x: auto;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin-left: -24px;
+    margin-right: -24px;
+    padding: 9px 15px;
+    scrollbar-width: thin;
+  }
+  .life-navigation button {
+    min-width: 125px;
+    padding: 8px 11px;
+    border-left: 0;
+    border-bottom: 2px solid transparent;
+  }
+  .life-navigation button[aria-current] {
+    border-bottom-color: var(--red);
+  }
+  .life-navigation button > span:first-child {
+    font-size: 22px;
+  }
+  .life-navigation button > span:last-child {
+    font-size: 12px;
+    max-width: 130px;
   }
   .life-chapter[id] {
     padding-bottom: 34px;
