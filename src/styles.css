@@ -402,6 +402,41 @@ summary:focus-visible,
 .life-evidence p {
   margin-bottom: 0;
 }
+
+/* Musashi's later writing accompanies the events, with its composition date visible. */
+.musashi-quote {
+  margin: 42px 0 36px;
+}
+.musashi-quote blockquote {
+  margin: 0;
+}
+.quote-japanese {
+  font-family: var(--serif), 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  font-size: clamp(27px, 2.5vw, 38px);
+  line-height: 1.65;
+  letter-spacing: 0.04em;
+  overflow-wrap: anywhere;
+  margin-bottom: 20px;
+}
+.quote-translation {
+  font-family: var(--serif);
+  font-size: 27px;
+  line-height: 1.4;
+  max-width: 42ch;
+  margin-bottom: 20px;
+}
+.musashi-quote figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.musashi-quote figcaption a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .site-footer {
   border-top: 1px solid var(--line);
   padding-top: 35px;

@@ -3,6 +3,8 @@ import { lifeChapters, lifeSources, evidenceNote } from '../data/musashi.js';
 import { artworks } from '../data/artworks.js';
 import Artwork from './Artwork.jsx';
 import ChapterSources from './ChapterSources.jsx';
+import MusashiQuote from './MusashiQuote.jsx';
+import { musashiQuotes } from '../data/quotes.js';
 
 const chapterArtwork = {
   kyoto: 'yoshioka',
@@ -84,9 +86,13 @@ export default function MusashiLife() {
             >
               <p className="chapter-year">{chapter.year}</p>
               <h3 tabIndex={-1}>{chapter.title}</h3>
+              {chapter.id === 'reigando' && <MusashiQuote quote={musashiQuotes[chapter.id]} />}
               {chapter.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
+              {chapter.id !== 'reigando' && musashiQuotes[chapter.id] && (
+                <MusashiQuote quote={musashiQuotes[chapter.id]} />
+              )}
               <Artwork artwork={artworks[chapter.artworkId || chapterArtwork[chapter.id]]} />
               <ChapterSources
                 sources={chapter.sourceIds
