@@ -73,6 +73,47 @@ The Library of Congress MARC record explicitly attributes the print to Enryosai 
 - Local derivative: 1085 x 1600 pixels, 235,210 bytes.
 - Editorial context: Utagawa Kuniyoshi, Miyamoto Musashi, 19th century, exact year unrecorded. National Diet Library. A later dramatic interpretation of the swordsman.
 
+## nobunaga.webp
+
+- Work: Portrait of Oda Nobunaga.
+- Artist: Kanō Sōshū.
+- Artwork date: 1583.
+- Collection or credited image source: Historiographical Institute, University of Tokyo (image source).
+- Source and rights record: [Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:Oda-Nobunaga.jpg).
+- Original image: [download URL](https://upload.wikimedia.org/wikipedia/commons/3/3b/Oda-Nobunaga.jpg).
+- Rights: **Public domain**. Commons applies PD-Art / PD-old-100, the Japanese public-domain tag and the Public Domain Mark.
+- Public Domain Mark explanation: https://creativecommons.org/publicdomain/mark/1.0/
+- Local derivative: 715 x 1600 pixels, 157,390 bytes.
+- Editorial context: Kanō Sōshū, Portrait of Oda Nobunaga, 1583. Image source: Historiographical Institute, University of Tokyo.
+
+## ieyasu.webp
+
+- Work: Portrait of Tokugawa Ieyasu.
+- Artist: Kanō Tan’yū.
+- Artwork date: 17th century.
+- Collection or credited image source: Osaka Castle Museum.
+- Source and rights record: [Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:Tokugawa_Ieyasu2_full.JPG).
+- Original image: [download URL](https://upload.wikimedia.org/wikipedia/commons/2/20/Tokugawa_Ieyasu2_full.JPG).
+- Rights: **Public domain**. Commons explicitly reports Public domain, Copyrighted: False and AttributionRequired: false and applies the Japanese public-domain tag.
+- Public Domain Mark explanation: https://creativecommons.org/publicdomain/mark/1.0/
+- Local derivative: 802 x 1600 pixels, 242,368 bytes.
+- Editorial context: Kanō Tan’yū, Portrait of Tokugawa Ieyasu, 17th century. Osaka Castle Museum.
+
+## tadatoshi.webp
+
+- Work: Portrait of Hosokawa Tadatoshi.
+- Artist: Yano Yoshishige, inscription by Ōbuchi Genkō.
+- Artwork date: 1644.
+- Collection or credited image source: Eisei Bunko Museum, Tokyo.
+- Source and rights record: [Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:Hosokawa_Tadatoshi.jpg).
+- Original image: [download URL](https://upload.wikimedia.org/wikipedia/commons/b/b2/Hosokawa_Tadatoshi.jpg).
+- Rights: **Public domain**. The file page applies PD-Art / PD-old-100 and the Public Domain Mark; the imageinfo API reports Public domain, Copyrighted: False and AttributionRequired: false.
+- Public Domain Mark explanation: https://creativecommons.org/publicdomain/mark/1.0/
+- Local derivative: 756 x 1600 pixels, 234,226 bytes.
+- Editorial context: Yano Yoshishige, Portrait of Hosokawa Tadatoshi, 1644, with an inscription by Ōbuchi Genkō. Colors on silk. Eisei Bunko Museum.
+
+The Commons source is a reproduction from the 1992 Japanese catalogue Higo no Ga Meihin Sen. The selected work has an inscription by Ōbuchi Genkō dated 1644. It is distinct from another Tadatoshi portrait with a Takuan Sōhō inscription dated 1641; those records have not been conflated.
+
 ## cormorant.webp
 
 - Work: Cormorant (U-zu).

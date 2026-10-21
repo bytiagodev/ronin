@@ -2,8 +2,12 @@ import { useEffect, useState } from 'react';
 import Icon, { Crest } from './components/Icon.jsx';
 import MusashiLife from './components/MusashiLife.jsx';
 import FiveRings from './components/FiveRings.jsx';
+import People from './components/People.jsx';
+import ProfilePage from './components/ProfilePage.jsx';
 import Artwork from './components/Artwork.jsx';
 import { artworks } from './data/artworks.js';
+import { findProfile } from './data/profiles.js';
+import { readPageRoute } from './lib/routes.js';
 
 const navigation = [
   { id: 'life', label: 'His life' },
@@ -132,6 +136,32 @@ function Footer() {
 }
 
 export default function App() {
+  const [route, setRoute] = useState(() => readPageRoute(window.location.hash));
+  const activeProfile = route.kind === 'profile' ? findProfile(route.personId) : null;
+  useEffect(() => {
+    function updateRoute() {
+      setRoute(readPageRoute(window.location.hash));
+    }
+    window.addEventListener('hashchange', updateRoute);
+    return () => window.removeEventListener('hashchange', updateRoute);
+  }, []);
+  useEffect(() => {
+    document.title = activeProfile ? `${activeProfile.name} | RŌNIN` : 'RŌNIN | Miyamoto Musashi';
+    const frame = requestAnimationFrame(() => {
+      if (route.kind === 'profile') {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        document.getElementById('profile-title')?.focus({ preventScroll: true });
+      } else if (route.anchor === 'home') {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      } else {
+        const destination = document.getElementById(route.anchor);
+        destination?.scrollIntoView();
+        if (route.anchor.startsWith('life-'))
+          destination?.querySelector('h3')?.focus({ preventScroll: true });
+      }
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [route, activeProfile]);
   return (
     <>
       <a
@@ -146,11 +176,26 @@ export default function App() {
       >
         Skip to content
       </a>
-      <Header />
+      <Header profileOpen={route.kind === 'profile'} />
       <main id="main-content" tabIndex={-1}>
-        <Hero />
-        <MusashiLife />
-        <FiveRings />
+        <div hidden={route.kind !== 'home'}>
+          <Hero />
+          <MusashiLife />
+          <FiveRings />
+          <People />
+        </div>
+        {activeProfile && <ProfilePage key={activeProfile.id} profile={activeProfile} />}
+        {route.kind === 'profile' && !activeProfile && (
+          <section className="missing-profile section-shell">
+            <h1 id="profile-title" tabIndex={-1}>
+              This person is not in the story.
+            </h1>
+            <p>Return to the people connected with Musashi.</p>
+            <a className="button button-dark" href="#people">
+              The people in his story
+            </a>
+          </section>
+        )}
       </main>
       <Footer />
     </>
