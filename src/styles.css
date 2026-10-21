@@ -748,6 +748,55 @@ h2[id] {
 .people-card .editorial-link {
   font-size: 12px;
 }
+.world-section {
+  padding-top: 75px;
+  padding-bottom: 75px;
+  background: #e8e3d7;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.era-tabs {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border: 1px solid #bcb4a3;
+}
+.era-tabs button {
+  background: transparent;
+  border-right: 1px solid #bcb4a3;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+.era-tabs button:last-child {
+  border-right: 0;
+}
+.era-tabs button > span:first-child {
+  font-family: var(--serif);
+  font-size: 29px;
+}
+.era-tabs button > span:last-child {
+  font-size: 12px;
+  line-height: 1.6;
+}
+.era-tabs button[aria-selected='true'] {
+  background: var(--ink);
+  color: var(--paper);
+}
+.era-panel {
+  padding: 38px 0 0;
+  max-width: 68ch;
+}
+.era-panel h3 {
+  font-size: 35px;
+}
+.era-panel p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #444a3f;
+}
+
 .profile-sources ul {
   margin: 0 0 25px;
   padding: 0;
@@ -1161,7 +1210,8 @@ h2[id] {
     margin: 45px 0;
   }
   .rings-section,
-  .people-section {
+  .people-section,
+  .world-section {
     padding-top: 48px;
     padding-bottom: 48px;
   }
@@ -1224,6 +1274,26 @@ h2[id] {
   }
   .people-card h3 {
     font-size: 30px;
+  }
+  .era-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .era-tabs button {
+    border-bottom: 1px solid #bcb4a3;
+    padding: 17px 13px;
+  }
+  .era-tabs button:last-child {
+    grid-column: 1 / -1;
+    border-bottom: 0;
+  }
+  .era-tabs button:nth-child(2n) {
+    border-right: 0;
+  }
+  .era-tabs button > span:first-child {
+    font-size: 25px;
+  }
+  .era-panel h3 {
+    font-size: 33px;
   }
   .site-footer {
     flex-direction: column;

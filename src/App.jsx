@@ -3,6 +3,7 @@ import Icon, { Crest } from './components/Icon.jsx';
 import MusashiLife from './components/MusashiLife.jsx';
 import FiveRings from './components/FiveRings.jsx';
 import People from './components/People.jsx';
+import HistoricalContext from './components/HistoricalContext.jsx';
 import ProfilePage from './components/ProfilePage.jsx';
 import Artwork from './components/Artwork.jsx';
 import { artworks } from './data/artworks.js';
@@ -183,6 +184,7 @@ export default function App() {
           <MusashiLife />
           <FiveRings />
           <People />
+          <HistoricalContext />
         </div>
         {activeProfile && <ProfilePage key={activeProfile.id} profile={activeProfile} />}
         {route.kind === 'profile' && !activeProfile && (
