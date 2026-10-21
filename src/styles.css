@@ -554,6 +554,127 @@ summary:focus-visible,
   font-size: clamp(30px, 3vw, 46px);
   line-height: 1.8;
 }
+
+/* The five-scroll tab interaction is retained. */
+.rings-section {
+  padding-top: 78px;
+  padding-bottom: 78px;
+  background: #e8e3d7;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.rings-section > .section-description {
+  max-width: 68ch;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #444a3f;
+}
+.rings-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  border: 1px solid #beb7a7;
+  margin-top: 35px;
+}
+.ring-tabs {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #beb7a7;
+}
+.ring-tab {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 20px;
+  padding: 25px;
+  text-align: left;
+  background: transparent;
+  border-bottom: 1px solid #c9c1b1;
+  font-size: 16px;
+}
+.ring-tab:last-child {
+  border-bottom: 0;
+}
+.ring-tab[data-active='true'] {
+  background: #dcd3c2;
+  box-shadow: inset 3px 0 var(--red);
+}
+.ring-kanji {
+  font-family: serif;
+  font-size: 28px;
+  color: var(--red);
+}
+.ring-panels {
+  background: #f5f1e9;
+  min-width: 0;
+}
+.ring-panel {
+  padding: 35px 40px;
+}
+.ring-panel-heading {
+  position: relative;
+  padding-right: 65px;
+}
+.ring-panel-heading h3 {
+  font-size: 38px;
+  margin-bottom: 14px;
+}
+.ring-panel-kanji {
+  font-family: serif;
+  font-size: 68px;
+  color: #c4b9a2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 1;
+}
+.ring-subtitle {
+  font-size: 16px;
+  color: var(--muted);
+}
+.ring-body p {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 68ch;
+  color: #444a3f;
+}
+.ring-reflection {
+  border-top: 1px solid var(--line);
+  margin-top: 25px;
+  padding-top: 23px;
+}
+.ring-reflection h4,
+.ring-exercise h4 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--red);
+  margin-bottom: 10px;
+}
+.ring-reflection p,
+.ring-exercise p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+.ring-exercise {
+  border-left: 2px solid #b3a184;
+  padding-left: 18px;
+  margin-top: 20px;
+}
+.rings-source-note {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-top: 23px;
+}
+.rings-source-links {
+  display: flex;
+  gap: 15px 25px;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+.rings-source-links a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .site-footer {
   border-top: 1px solid var(--line);
   padding-top: 35px;
@@ -739,6 +860,50 @@ summary:focus-visible,
   }
   .reigando-chapter .musashi-quote {
     margin: 45px 0;
+  }
+  .rings-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .rings-layout {
+    grid-template-columns: 1fr;
+  }
+  .ring-tabs {
+    flex-direction: row;
+    border-right: 0;
+    border-bottom: 1px solid #beb7a7;
+  }
+  .ring-tab {
+    flex-direction: column;
+    gap: 9px;
+    padding: 15px 5px;
+    font-size: 14px;
+    min-width: 0;
+    border-bottom: 0;
+    border-right: 1px solid #c9c1b1;
+  }
+  .ring-tab:last-child {
+    border-right: 0;
+  }
+  .ring-tab[data-active='true'] {
+    box-shadow: inset 0 -3px var(--red);
+  }
+  .ring-panel {
+    padding: 25px 22px;
+  }
+  .ring-panel-heading {
+    padding-right: 0;
+  }
+  .ring-panel-heading h3 {
+    font-size: 33px;
+    padding-right: 35px;
+  }
+  .ring-panel-kanji {
+    font-size: 43px;
+    color: #b8ac95;
+  }
+  .ring-subtitle {
+    padding-right: 0;
   }
   .site-footer {
     flex-direction: column;
