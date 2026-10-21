@@ -15,6 +15,36 @@
 
 The Japanese Agency for Cultural Affairs independently identifies the artist and collection: https://bunka.nii.ac.jp/heritages/detail/204399/1 .
 
+## ganryujima.webp
+
+- Work: Miyamoto Musashi Fights Sasaki Kojirō at Ganryūjima.
+- Artist: Utagawa Yoshitora.
+- Artwork date: About 1843-1847.
+- Collection or credited image source: Wikimedia Commons; image source: Artelino.
+- Source and rights record: [Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:Miyamoto-Musashi-Fights-Sasaki-Kojiro-at-Ganryujima-Ukiyo-e.png).
+- Original image: [download URL](https://upload.wikimedia.org/wikipedia/commons/b/b5/Miyamoto-Musashi-Fights-Sasaki-Kojiro-at-Ganryujima-Ukiyo-e.png).
+- Rights: **Public domain**. Commons applies PD-Art / PD-old-100 and the Public Domain Mark to this faithful reproduction of a nineteenth-century two-dimensional print.
+- Public Domain Mark explanation: https://creativecommons.org/publicdomain/mark/1.0/
+- Local derivative: 1600 x 813 pixels, 249,090 bytes.
+- Editorial context: Utagawa Yoshitora, Musashi and Kojirō at Ganryūjima, about 1843-1847. A woodblock interpretation made more than two centuries after the duel.
+
+The Commons file summary retains an outdated Yoshifusa attribution, while its 2023 replacement image and file-history note identify a Yoshitora print. The artist and dating were checked against the Museum of Fine Arts record indexed at https://ukiyo-e.org/image/mfa/sc168302 and the Honolulu Museum of Art record https://honolulu.emuseum.com/objects/7266/miyamoto-musashi-fights-sasaki-kojiro-at-ganryujima . Both identify Utagawa Yoshitora and 1843-1847. The local image is the 2023 replacement. The right-hand figure is Kojirō, identified by the inscription beside him (佐々木岸柳); the left-hand figure is labeled 宮本無三四. The Kojirō profile reuses this complete image with CSS object-position 90% 65%, without creating a cropped file. The original image holding collection is not asserted.
+
+## hotei.webp
+
+- Work: Hotei Watching a Cockfight.
+- Artist: Miyamoto Musashi.
+- Artwork date: Undated.
+- Collection or credited image source: Fukuoka Art Museum, Matsunaga Collection.
+- Source and rights record: [Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:Hotei_Watching_a_Cockfight.jpg).
+- Original image: [download URL](https://upload.wikimedia.org/wikipedia/commons/0/0d/Hotei_Watching_a_Cockfight.jpg).
+- Rights: **Public domain**. Commons applies PD-Art / PD-old-auto-expired and PD-old-100-expired, identifies Musashi as the artist, and states public-domain status in the source country and the United States.
+- Public Domain Mark explanation: https://creativecommons.org/publicdomain/mark/1.0/
+- Local derivative: 1024 x 1377 pixels, 218,940 bytes.
+- Editorial context: Miyamoto Musashi, Hotei Watching a Cockfight, undated. Fukuoka Art Museum, Matsunaga Collection.
+
+The Fukuoka Art Museum collection entry identifies the work and artist: https://artsandculture.google.com/asset/6AFtyjpX3yfohg . The source image is the JSTOR record linked by Commons: https://www.jstor.org/stable/community.13610668 .
+
 ## yoshioka.webp
 
 - Work: Actors as Sekiguchi Yatarō, Yoshioka Kanefusa and Miyamoto Musashi.
@@ -42,3 +72,18 @@ The Library of Congress MARC record explicitly attributes the print to Enryosai 
 - Public Domain Mark explanation: https://creativecommons.org/publicdomain/mark/1.0/
 - Local derivative: 1085 x 1600 pixels, 235,210 bytes.
 - Editorial context: Utagawa Kuniyoshi, Miyamoto Musashi, 19th century, exact year unrecorded. National Diet Library. A later dramatic interpretation of the swordsman.
+
+## cormorant.webp
+
+- Work: Cormorant (U-zu).
+- Artist: Miyamoto Musashi.
+- Artwork date: 17th century.
+- Collection or credited image source: Eisei Bunko Museum, entrusted to Kumamoto Prefectural Museum of Art.
+- Source and rights record: [Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:Cormorant_by_Miyamoto_Musashi.jpg).
+- Original image: [download URL](https://upload.wikimedia.org/wikipedia/commons/8/8c/Cormorant_by_Miyamoto_Musashi.jpg).
+- Rights: **Public domain**. The file page applies PD-Art / PD-old-auto-expired and PD-old-100-expired and the Public Domain Mark; the imageinfo API reports Public domain, Copyrighted: False and AttributionRequired: false.
+- Public Domain Mark explanation: https://creativecommons.org/publicdomain/mark/1.0/
+- Local derivative: 769 x 1600 pixels, 238,512 bytes.
+- Editorial context: Miyamoto Musashi, Cormorant, 17th century. Ink on paper. Eisei Bunko Museum, entrusted to Kumamoto Prefectural Museum of Art.
+
+The collection, artist and seventeenth-century dating were independently checked in [Eisei Bunko Museum’s Spring 2022 exhibition](https://www.eiseibunko.com/test/english/past_exhibitions2022.html) and its [list of works, item 9](https://www.eiseibunko.com/test/images_exhibition/2022/2022Spring_list_English.pdf). The museum’s reference image was visually compared with the downloaded Commons image and matches the same painting. The source image record is https://www.jstor.org/stable/community.13600109 . The Commons description contains an unrelated vandalized author sentence; the structured artist field, original image record and museum attribution identify Musashi. That sentence was not used as evidence.

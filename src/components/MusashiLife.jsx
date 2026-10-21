@@ -11,6 +11,12 @@ const chapterArtwork = {
   wandering: 'musashiPrint',
 };
 
+const chapterTreatments = {
+  ganryujima: 'duel-chapter',
+  brush: 'brush-chapter',
+  reigando: 'reigando-chapter',
+};
+
 export default function MusashiLife() {
   const [activeChapter, setActiveChapter] = useState(lifeChapters[0].id);
   const navigationRef = useRef(null);
@@ -82,14 +88,34 @@ export default function MusashiLife() {
               key={chapter.id}
               id={`life-${chapter.id}`}
               data-chapter={chapter.id}
-              className="life-chapter"
+              className={`life-chapter ${chapterTreatments[chapter.id] || ''}`}
             >
+              {chapter.id === 'ganryujima' && (
+                <Artwork artwork={artworks.ganryujima} className="duel-artwork" />
+              )}
               <p className="chapter-year">{chapter.year}</p>
               <h3 tabIndex={-1}>{chapter.title}</h3>
               {chapter.id === 'reigando' && <MusashiQuote quote={musashiQuotes[chapter.id]} />}
-              {chapter.paragraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+              {(chapter.id === 'brush' ? chapter.paragraphs.slice(0, 1) : chapter.paragraphs).map(
+                (paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ),
+              )}
+              {chapter.id === 'brush' && (
+                <div
+                  className="brush-gallery"
+                  aria-label="Paintings by Miyamoto Musashi"
+                  tabIndex={0}
+                >
+                  {[artworks.shrike, artworks.hotei, artworks.cormorant]
+                    .filter(Boolean)
+                    .map((artwork) => (
+                      <Artwork key={artwork.src} artwork={artwork} />
+                    ))}
+                </div>
+              )}
+              {chapter.id === 'brush' &&
+                chapter.paragraphs.slice(1).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               {chapter.id !== 'reigando' && musashiQuotes[chapter.id] && (
                 <MusashiQuote quote={musashiQuotes[chapter.id]} />
               )}

@@ -437,6 +437,123 @@ summary:focus-visible,
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+/* The print reaches the window edges while the reading column stays in place. */
+.duel-chapter {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  padding-top: clamp(250px, 28vw, 420px);
+  padding-bottom: 55px;
+  margin-top: 65px;
+  margin-bottom: 70px;
+  color: #f7f1e5;
+  border: 0;
+}
+.duel-chapter::before,
+.duel-chapter::after,
+.duel-chapter .duel-artwork img {
+  position: absolute;
+  left: calc(-100vw + 100% + var(--page-gutter));
+  width: 100vw;
+  pointer-events: none;
+}
+.duel-chapter::before {
+  content: '';
+  inset-block: 0;
+  z-index: -3;
+  background: #262a26;
+}
+.duel-chapter .duel-artwork {
+  margin: 26px 0 0;
+  order: 1;
+}
+.duel-chapter .duel-artwork img {
+  top: 0;
+  height: clamp(440px, 53vw, 760px);
+  max-height: none;
+  object-fit: cover;
+  background: #262a26;
+  z-index: -2;
+}
+.duel-chapter::after {
+  content: '';
+  top: 0;
+  height: clamp(440px, 53vw, 760px);
+  z-index: -1;
+  background: linear-gradient(180deg, #262a2600 0%, #262a2655 25%, #262a26ec 70%, #262a26 100%);
+}
+.duel-chapter > p:not(.chapter-year) {
+  color: #eee9dc;
+}
+.duel-chapter .chapter-year,
+.duel-chapter .chapter-sources summary {
+  color: #e6a18b;
+}
+.duel-chapter .artwork figcaption,
+.duel-chapter .musashi-quote figcaption {
+  color: #d4ccbd;
+}
+.duel-chapter .chapter-sources {
+  border-color: #696c60;
+}
+.duel-chapter a:hover {
+  color: #f1baa5;
+}
+.life-navigation[data-theme='ink'] {
+  background: #262a26;
+  color: #f7f1e5;
+}
+.life-navigation[data-theme='ink'] button > span {
+  color: #ded9cc;
+}
+.life-navigation[data-theme='ink'] button[aria-current] {
+  background: #41463d;
+  border-color: #e6a18b;
+}
+.life-navigation[data-theme='ink'] button[aria-current] > span:first-child {
+  color: #e6a18b;
+}
+.life-navigation[data-theme='ink'] button:focus-visible {
+  outline-color: #e6a18b;
+}
+.brush-chapter {
+  padding-top: 24px;
+}
+.brush-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 38px 0 48px;
+}
+.brush-gallery .artwork {
+  margin: 0;
+}
+.brush-gallery .artwork img {
+  height: 510px;
+  max-height: none;
+  object-fit: contain;
+  background: transparent;
+  object-position: center bottom;
+}
+@media (min-width: 761px) {
+  .brush-gallery .artwork img {
+    /* Gallery alignment takes precedence over each artwork's inline framing position. */
+    object-position: center bottom !important;
+  }
+}
+.reigando-chapter {
+  padding-top: 50px;
+  padding-bottom: 75px;
+}
+.reigando-chapter .musashi-quote {
+  margin: 65px 0 62px;
+}
+.reigando-chapter .quote-japanese {
+  font-size: clamp(30px, 3vw, 46px);
+  line-height: 1.8;
+}
 .site-footer {
   border-top: 1px solid var(--line);
   padding-top: 35px;
@@ -593,6 +710,35 @@ summary:focus-visible,
   }
   .life-evidence h3 {
     font-size: 30px;
+  }
+  .duel-chapter {
+    padding-top: 280px;
+    margin-top: 45px;
+    margin-bottom: 45px;
+  }
+  .duel-chapter .duel-artwork img {
+    object-position: 58% center;
+  }
+  .brush-gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 22px;
+    padding-bottom: 18px;
+    scroll-snap-type: x proximity;
+  }
+  .brush-gallery .artwork {
+    flex: 0 0 min(78vw, 300px);
+    scroll-snap-align: start;
+  }
+  .brush-gallery .artwork img {
+    height: 440px;
+  }
+  .reigando-chapter {
+    padding-top: 28px;
+    padding-bottom: 50px;
+  }
+  .reigando-chapter .musashi-quote {
+    margin: 45px 0;
   }
   .site-footer {
     flex-direction: column;
