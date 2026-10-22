@@ -351,6 +351,13 @@ test('journal entries survive closing and reloading and remain deleted after rem
   await journal.getByRole('button', { name: /^Delete reflection:/ }).click();
   await expect(journal.getByRole('status')).toHaveText('Reflection deleted.');
   await expect(journal.getByText('You have no saved reflections.')).toBeVisible();
+  await expect(journal.getByRole('button', { name: 'Undo' })).toBeFocused();
+  await journal.getByRole('button', { name: 'Undo' }).click();
+  await expect(journal.getByRole('status')).toHaveText('Reflection restored.');
+  await expect(journal.locator('.journal-entries')).toContainText(reflection);
+  await expect(journal.getByRole('button', { name: 'Undo' })).toHaveCount(0);
+  await journal.getByRole('button', { name: /^Delete reflection:/ }).click();
+  await expect(journal.getByText('You have no saved reflections.')).toBeVisible();
   await page.reload();
   journal = await openJournal(page);
   await expect(journal.locator('.journal-entries li')).toHaveCount(0);

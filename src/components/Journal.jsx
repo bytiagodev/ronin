@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Modal from './Modal.jsx';
 import Icon from './Icon.jsx';
 import {
@@ -21,6 +21,13 @@ export default function Journal({ onClose, initialElement = 'Earth' }) {
   const [reflection, setReflection] = useState('');
   const [element, setElement] = useState(initialElement);
   const [status, setStatus] = useState('');
+  const [lastDeleted, setLastDeleted] = useState(null);
+  const undoButtonRef = useRef(null);
+
+  // The deleted entry's button is gone, so focus moves to Undo instead of the page.
+  useEffect(() => {
+    if (lastDeleted) undoButtonRef.current?.focus();
+  }, [lastDeleted]);
 
   function persistEntries(nextEntries) {
     try {
@@ -46,8 +53,26 @@ export default function Journal({ onClose, initialElement = 'Earth' }) {
       return;
     }
     if (persistEntries([nextEntry, ...entries])) {
+      setLastDeleted(null);
       setReflection('');
       setStatus('Reflection saved on this device.');
+    }
+  }
+
+  function deleteReflection(entry) {
+    const index = entries.findIndex((savedEntry) => savedEntry.id === entry.id);
+    if (persistEntries(entries.filter((savedEntry) => savedEntry.id !== entry.id))) {
+      setLastDeleted({ entry, index });
+      setStatus('Reflection deleted.');
+    }
+  }
+
+  function undoDelete() {
+    const restoredEntries = [...entries];
+    restoredEntries.splice(lastDeleted.index, 0, lastDeleted.entry);
+    if (persistEntries(restoredEntries)) {
+      setLastDeleted(null);
+      setStatus('Reflection restored.');
     }
   }
 
@@ -99,9 +124,16 @@ export default function Journal({ onClose, initialElement = 'Earth' }) {
           </button>
         </div>
       </form>
-      <p className="form-status" role="status">
-        {status}
-      </p>
+      <div className="journal-status">
+        <p className="form-status" role="status">
+          {status}
+        </p>
+        {lastDeleted && (
+          <button ref={undoButtonRef} className="text-button" onClick={undoDelete}>
+            Undo
+          </button>
+        )}
+      </div>
       <div className="journal-entries-header">
         <h3>
           Your reflections <span>({entries.length})</span>
@@ -125,10 +157,7 @@ export default function Journal({ onClose, initialElement = 'Earth' }) {
                 <button
                   className="text-button"
                   aria-label={`Delete reflection: ${entry.text.slice(0, 35)}`}
-                  onClick={() => {
-                    if (persistEntries(entries.filter((savedEntry) => savedEntry.id !== entry.id)))
-                      setStatus('Reflection deleted.');
-                  }}
+                  onClick={() => deleteReflection(entry)}
                 >
                   Delete
                 </button>
