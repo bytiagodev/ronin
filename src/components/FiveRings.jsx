@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { rings, ringSources } from '../data/rings';
 
-export default function FiveRings() {
+export default function FiveRings({ onWriteFromScroll }) {
   const [activeRingId, setActiveRingId] = useState(rings[0].id);
   const tabButtons = useRef([]);
 
@@ -107,6 +107,12 @@ export default function FiveRings() {
                 <h4>Try this</h4>
                 <p>{ring.exercise}</p>
               </div>
+              <button
+                className="button button-dark scroll-journal-button"
+                onClick={() => onWriteFromScroll(ring.title)}
+              >
+                Write from this scroll
+              </button>
             </div>
           ))}
         </div>

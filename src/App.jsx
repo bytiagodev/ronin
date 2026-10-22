@@ -5,6 +5,7 @@ import FiveRings from './components/FiveRings.jsx';
 import People from './components/People.jsx';
 import HistoricalContext from './components/HistoricalContext.jsx';
 import ProfilePage from './components/ProfilePage.jsx';
+import Journal from './components/Journal.jsx';
 import Artwork from './components/Artwork.jsx';
 import { artworks } from './data/artworks.js';
 import { findProfile } from './data/profiles.js';
@@ -18,7 +19,7 @@ const navigation = [
   { id: 'reading-room', label: 'Reading room' },
 ];
 
-function Header({ profileOpen }) {
+function Header({ onOpenJournal, profileOpen }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   useEffect(() => {
@@ -79,6 +80,16 @@ function Header({ profileOpen }) {
       </nav>
       <div className="header-actions">
         <button
+          className="journal-trigger"
+          onClick={() => {
+            setMenuOpen(false);
+            onOpenJournal();
+          }}
+        >
+          <Icon name="bookmark" size={17} />
+          <span>My journal</span>
+        </button>
+        <button
           className="icon-button menu-toggle"
           aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
           aria-controls="main-navigation"
@@ -138,6 +149,7 @@ function Footer() {
 
 export default function App() {
   const [route, setRoute] = useState(() => readPageRoute(window.location.hash));
+  const [journalRing, setJournalRing] = useState(null);
   const activeProfile = route.kind === 'profile' ? findProfile(route.personId) : null;
   useEffect(() => {
     function updateRoute() {
@@ -177,12 +189,15 @@ export default function App() {
       >
         Skip to content
       </a>
-      <Header profileOpen={route.kind === 'profile'} />
+      <Header
+        onOpenJournal={() => setJournalRing('Earth')}
+        profileOpen={route.kind === 'profile'}
+      />
       <main id="main-content" tabIndex={-1}>
         <div hidden={route.kind !== 'home'}>
           <Hero />
           <MusashiLife />
-          <FiveRings />
+          <FiveRings onWriteFromScroll={setJournalRing} />
           <People />
           <HistoricalContext />
         </div>
@@ -200,6 +215,7 @@ export default function App() {
         )}
       </main>
       <Footer />
+      {journalRing && <Journal initialElement={journalRing} onClose={() => setJournalRing(null)} />}
     </>
   );
 }
