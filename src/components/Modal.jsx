@@ -34,7 +34,7 @@ export default function Modal({ title, onClose, children, className = '' }) {
     >
       <div className="modal-content">
         <div className="modal-header">
-          <span className="eyebrow">RŌNIN / FIELD NOTES</span>
+          <span className="eyebrow">RŌNIN / JOURNAL</span>
           <button className="icon-button" onClick={onClose} aria-label="Close dialog">
             <Icon name="close" />
           </button>

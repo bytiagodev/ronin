@@ -122,7 +122,7 @@ test('text exports include each reflection, its scroll, and readable date in sav
 
   assert.equal(
     exportReflections([firstEntry, secondEntry]),
-    'RŌNIN / Personal reflections\n\n' +
+    'RŌNIN / Journal\n\n' +
       'Earth · 18/10/2026\nLearn the foundations before adding another technique.\n\n' +
       'Wind · 19/10/2026\nCompare two approaches.\nKeep one useful observation from each.\n',
   );

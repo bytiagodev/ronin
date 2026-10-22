@@ -365,7 +365,7 @@ test('journal export contains the saved words and perspective', async ({ page })
   const downloadPromise = page.waitForEvent('download');
   await journal.getByRole('button', { name: 'Export', exact: true }).click();
   const download = await downloadPromise;
-  expect(download.suggestedFilename()).toBe('ronin-reflections.txt');
+  expect(download.suggestedFilename()).toBe('ronin-journal.txt');
   expect(await download.failure()).toBeNull();
   const contents = await readFile(await download.path(), 'utf8');
   expect(contents).toContain(reflection);

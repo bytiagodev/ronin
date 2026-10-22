@@ -27,7 +27,7 @@ export function createReflection(text, element, id, createdAt) {
 
 export function exportReflections(entries) {
   return [
-    'RŌNIN / Personal reflections',
+    'RŌNIN / Journal',
     '',
     ...entries.map(
       (entry) =>

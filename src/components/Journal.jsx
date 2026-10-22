@@ -57,7 +57,7 @@ export default function Journal({ onClose, initialElement = 'Earth' }) {
     );
     const downloadLink = document.createElement('a');
     downloadLink.href = downloadUrl;
-    downloadLink.download = 'ronin-reflections.txt';
+    downloadLink.download = 'ronin-journal.txt';
     downloadLink.click();
     // Safari can cancel the download if the URL is revoked in the same task.
     setTimeout(() => URL.revokeObjectURL(downloadUrl));

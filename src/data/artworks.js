@@ -25,14 +25,14 @@ export const artworks = {
     alt: 'Woodblock triptych showing two swordsmen facing each other on a shoreline, watched by people beneath pine trees.',
     title: 'Miyamoto Musashi Fights Sasaki Kojirō at Ganryūjima',
     artist: 'Utagawa Yoshitora',
-    date: 'About 1843-1847',
+    date: 'About 1843-47',
     institution: 'Wikimedia Commons; image source: Artelino',
     sourceUrl:
       'https://commons.wikimedia.org/wiki/File:Miyamoto-Musashi-Fights-Sasaki-Kojiro-at-Ganryujima-Ukiyo-e.png',
     license: 'Public domain',
     licenseUrl: 'https://creativecommons.org/publicdomain/mark/1.0/',
     caption:
-      'Utagawa Yoshitora, Musashi and Kojirō at Ganryūjima, about 1843-1847. A woodblock interpretation made more than two centuries after the duel.',
+      'Utagawa Yoshitora, Musashi and Kojirō at Ganryūjima, about 1843-47. A woodblock interpretation made more than two centuries after the duel.',
     position: '50% 50%',
     width: 1600,
     height: 813,
@@ -162,6 +162,6 @@ export const figureArtworks = {
     alt: 'Sasaki Kojirō, the swordsman at the right of a later woodblock print, faces Musashi on the shoreline.',
     position: '90% 65%',
     caption:
-      'Kojirō is the right-hand swordsman in Utagawa Yoshitora’s Ganryūjima triptych, about 1843-1847. This later print is used with framing that brings his figure into view.',
+      'Kojirō is the right-hand swordsman in Utagawa Yoshitora’s Ganryūjima triptych, about 1843-47. This later print is used with framing that brings his figure into view.',
   },
 };

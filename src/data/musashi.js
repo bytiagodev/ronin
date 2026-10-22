@@ -54,7 +54,7 @@ export const lifeChapters = [
   {
     id: 'wandering',
     artworkId: 'musashiPrint',
-    year: '1613-1634',
+    year: '1613-34',
     chronologyYear: 1613,
     title: 'A reputation without a fixed place',
     paragraphs: [

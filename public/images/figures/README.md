@@ -25,14 +25,14 @@ The Japanese Agency for Cultural Affairs independently identifies the artist and
 
 - Work: Miyamoto Musashi Fights Sasaki Kojirō at Ganryūjima.
 - Artist: Utagawa Yoshitora.
-- Artwork date: About 1843-1847.
+- Artwork date: About 1843-47.
 - Collection or credited image source: Wikimedia Commons; image source: Artelino.
 - Source and rights record: [Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:Miyamoto-Musashi-Fights-Sasaki-Kojiro-at-Ganryujima-Ukiyo-e.png).
 - Original image: [download URL](https://upload.wikimedia.org/wikipedia/commons/b/b5/Miyamoto-Musashi-Fights-Sasaki-Kojiro-at-Ganryujima-Ukiyo-e.png).
 - Rights: **Public domain**. Commons applies PD-Art / PD-old-100 and the Public Domain Mark to this faithful reproduction of a nineteenth-century two-dimensional print.
 - Public Domain Mark explanation: https://creativecommons.org/publicdomain/mark/1.0/
 - Local derivative: 1600 x 813 pixels, 249,090 bytes.
-- Editorial context: Utagawa Yoshitora, Musashi and Kojirō at Ganryūjima, about 1843-1847. A woodblock interpretation made more than two centuries after the duel.
+- Editorial context: Utagawa Yoshitora, Musashi and Kojirō at Ganryūjima, about 1843-47. A woodblock interpretation made more than two centuries after the duel.
 
 The Commons file summary retains an outdated Yoshifusa attribution, while its 2023 replacement image and file-history note identify a Yoshitora print. The artist and dating were checked against the Museum of Fine Arts record indexed at https://ukiyo-e.org/image/mfa/sc168302 and the Honolulu Museum of Art record https://honolulu.emuseum.com/objects/7266/miyamoto-musashi-fights-sasaki-kojiro-at-ganryujima . Both identify Utagawa Yoshitora and 1843-1847. The local image is the 2023 replacement. The right-hand figure is Kojirō, identified by the inscription beside him (佐々木岸柳); the left-hand figure is labeled 宮本無三四. The Kojirō profile reuses this complete image with CSS object-position 90% 65%, without creating a cropped file. The original image holding collection is not asserted.
 

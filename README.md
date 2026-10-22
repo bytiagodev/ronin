@@ -17,16 +17,16 @@ RŌNIN is the place I wanted while I was reading about him: his life told as one
 
 ## Earth · The ground
 
-| | |
-| --- | --- |
-| His life | 9 chapters, from his first duel to his death in Kumamoto |
-| His words | 8 short passages in the original Japanese, translated for the site |
-| The Five Rings | 5 scrolls: Earth, Water, Fire, Wind and Void |
-| The people in his story | Nobunaga, Ieyasu, Kojirō, Tadatoshi and Iori |
-| His Japan | 5 turning points, from Honnōji in 1582 to Kumamoto in the 1640s |
-| Artwork | Public-domain paintings and prints, each with its rights record |
-| Journal | Notes written from any scroll, kept in the browser, exportable as text |
-| Server, accounts, database | None |
+|                            |                                                                        |
+| -------------------------- | ---------------------------------------------------------------------- |
+| His life                   | 9 chapters, from his first duel to his death in Kumamoto               |
+| His words                  | 8 short passages in the original Japanese, translated for the site     |
+| The Five Rings             | 5 scrolls: Earth, Water, Fire, Wind and Void                           |
+| The people in his story    | Nobunaga, Ieyasu, Kojirō, Tadatoshi and Iori                           |
+| His Japan                  | 5 turning points, from Honnōji in 1582 to Kumamoto in the 1640s        |
+| Artwork                    | Public-domain paintings and prints, each with its rights record        |
+| Journal                    | Notes written from any scroll, kept in the browser, exportable as text |
+| Server, accounts, database | None                                                                   |
 
 ## Water · The look
 
@@ -55,7 +55,7 @@ Image records, rights and dimensions are listed in [public/images/figures/README
 
 ## Void · What remains
 
-Code under the [MIT licence](LICENSE). The paintings and prints are in the public domain, as recorded for each file. DM Sans and Libre Caslon Display are used under the SIL Open Font License.
+Code under the [MIT licence](LICENSE). The paintings and prints are in the public domain, as recorded for each file. DM Sans, Libre Caslon Display and Noto Serif JP, which the seal is drawn from, are used under the SIL Open Font License.
 
 ---
 
