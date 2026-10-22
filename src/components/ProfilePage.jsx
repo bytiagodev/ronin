@@ -2,14 +2,6 @@ import { profiles } from '../data/profiles.js';
 import Artwork from './Artwork.jsx';
 import ChapterSources from './ChapterSources.jsx';
 
-const connections = {
-  nobunaga: { chapter: 'beginning', label: 'Musashi’s early world' },
-  ieyasu: { chapter: 'wandering', label: 'The wandering years' },
-  kojiro: { chapter: 'ganryujima', label: 'The duel at Ganryūjima' },
-  tadatoshi: { chapter: 'kumamoto', label: 'The invitation to Kumamoto' },
-  iori: { chapter: 'shimabara', label: 'Musashi and Iori at Shimabara' },
-};
-
 function jumpToSection(sectionId) {
   const section = document.getElementById(sectionId);
   section?.scrollIntoView();
@@ -17,7 +9,6 @@ function jumpToSection(sectionId) {
 }
 
 export default function ProfilePage({ profile }) {
-  const connection = connections[profile.id];
   const relatedProfiles = profile.relatedIds
     .map((personId) => profiles.find((person) => person.id === personId))
     .filter(Boolean);
@@ -51,8 +42,8 @@ export default function ProfilePage({ profile }) {
           <aside className="profile-connection">
             <p className="eyebrow">In Musashi’s life</p>
             <h2>{profile.epithet}</h2>
-            <a className="editorial-link" href={`#life-${connection.chapter}`}>
-              {connection.label}
+            <a className="editorial-link" href={`#life-${profile.storyLink.chapter}`}>
+              {profile.storyLink.label}
             </a>
           </aside>
         )}
@@ -144,7 +135,7 @@ export default function ProfilePage({ profile }) {
               ))}
             </ul>
           </section>
-          <a className="button button-dark" href={`#life-${connection.chapter}`}>
+          <a className="button button-dark" href={`#life-${profile.storyLink.chapter}`}>
             Return to Musashi’s story
           </a>
         </div>

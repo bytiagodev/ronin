@@ -6,11 +6,6 @@ import ChapterSources from './ChapterSources.jsx';
 import MusashiQuote from './MusashiQuote.jsx';
 import { musashiQuotes } from '../data/quotes.js';
 
-const chapterArtwork = {
-  kyoto: 'yoshioka',
-  wandering: 'musashiPrint',
-};
-
 const chapterTreatments = {
   ganryujima: 'duel-chapter',
   brush: 'brush-chapter',
@@ -35,22 +30,30 @@ export default function MusashiLife() {
     });
   }, [activeChapter]);
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      () => {
-        const readingLine = window.innerHeight * 0.35;
-        const currentChapter = lifeChapters.findLast((chapter) => {
-          const element = document.getElementById(`life-${chapter.id}`);
-          return element && element.getBoundingClientRect().top <= readingLine;
-        });
-        if (currentChapter) setActiveChapter(currentChapter.id);
-      },
-      { rootMargin: '-10% 0px -65% 0px' },
-    );
-    lifeChapters.forEach((chapter) => {
-      const element = document.getElementById(`life-${chapter.id}`);
-      if (element) observer.observe(element);
-    });
-    return () => observer.disconnect();
+    // The current chapter is the last one whose top has passed the reading line, set
+    // at 35% of the viewport so a chapter becomes current once its heading is being read.
+    // Checking on every scrolled frame keeps the timeline right after instant jumps.
+    let frame = 0;
+    function updateActiveChapter() {
+      frame = 0;
+      const readingLine = window.innerHeight * 0.35;
+      const currentChapter = lifeChapters.findLast((chapter) => {
+        const element = document.getElementById(`life-${chapter.id}`);
+        return element && element.getBoundingClientRect().top <= readingLine;
+      });
+      if (currentChapter) setActiveChapter(currentChapter.id);
+    }
+    function scheduleUpdate() {
+      if (!frame) frame = requestAnimationFrame(updateActiveChapter);
+    }
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate);
+    scheduleUpdate();
+    return () => {
+      window.removeEventListener('scroll', scheduleUpdate);
+      window.removeEventListener('resize', scheduleUpdate);
+      cancelAnimationFrame(frame);
+    };
   }, []);
   function visitChapter(chapterId) {
     const chapter = document.getElementById(`life-${chapterId}`);
@@ -95,31 +98,29 @@ export default function MusashiLife() {
               )}
               <p className="chapter-year">{chapter.year}</p>
               <h3 tabIndex={-1}>{chapter.title}</h3>
-              {chapter.id === 'reigando' && <MusashiQuote quote={musashiQuotes[chapter.id]} />}
-              {(chapter.id === 'brush' ? chapter.paragraphs.slice(0, 1) : chapter.paragraphs).map(
-                (paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ),
-              )}
-              {chapter.id === 'brush' && (
+              {chapter.quoteFirst && <MusashiQuote quote={musashiQuotes[chapter.id]} />}
+              {chapter.paragraphs.slice(0, chapter.galleryAfter).map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+              {chapter.gallery && (
                 <div
                   className="brush-gallery"
                   aria-label="Paintings by Miyamoto Musashi"
                   tabIndex={0}
                 >
-                  {[artworks.shrike, artworks.hotei, artworks.cormorant]
-                    .filter(Boolean)
-                    .map((artwork) => (
-                      <Artwork key={artwork.src} artwork={artwork} />
-                    ))}
+                  {chapter.gallery.map((artworkId) => (
+                    <Artwork key={artworkId} artwork={artworks[artworkId]} />
+                  ))}
                 </div>
               )}
-              {chapter.id === 'brush' &&
-                chapter.paragraphs.slice(1).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-              {chapter.id !== 'reigando' && musashiQuotes[chapter.id] && (
+              {chapter.gallery &&
+                chapter.paragraphs
+                  .slice(chapter.galleryAfter)
+                  .map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              {!chapter.quoteFirst && musashiQuotes[chapter.id] && (
                 <MusashiQuote quote={musashiQuotes[chapter.id]} />
               )}
-              <Artwork artwork={artworks[chapter.artworkId || chapterArtwork[chapter.id]]} />
+              <Artwork artwork={artworks[chapter.artworkId]} />
               <ChapterSources
                 sources={chapter.sourceIds
                   .map((sourceId) => lifeSources.find((source) => source.id === sourceId))

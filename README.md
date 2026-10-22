@@ -34,7 +34,7 @@ The site borrows its look from his paintings: ivory paper, black ink and one ver
 
 ## Fire · The build
 
-React and Vite, plain JavaScript and CSS. The story, quotations, people and turning points live in data modules, separate from the components that show them. The life timeline follows your reading with an IntersectionObserver, profile pages use hash routes such as `#people/kojiro`, and the journal stores notes in `localStorage`, so nothing leaves your browser.
+React and Vite, plain JavaScript and CSS. The story, quotations, people and turning points live in data modules, separate from the components that show them. The life timeline follows your reading as you scroll, profile pages use hash routes such as `#people/kojiro`, and the journal stores notes in `localStorage`, so nothing leaves your browser.
 
 ```sh
 npm install

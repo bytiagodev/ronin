@@ -1,17 +1,13 @@
 import { useRef, useState } from 'react';
 import { historicalEras } from '../data/context.js';
+import { nextTabIndex } from '../lib/tabs.js';
 
 export default function HistoricalContext() {
   const [activeIndex, setActiveIndex] = useState(0);
   const tabRefs = useRef([]);
   function handleKey(event, currentIndex) {
-    let nextIndex;
-    if (event.key === 'ArrowRight') nextIndex = (currentIndex + 1) % historicalEras.length;
-    else if (event.key === 'ArrowLeft')
-      nextIndex = (currentIndex - 1 + historicalEras.length) % historicalEras.length;
-    else if (event.key === 'Home') nextIndex = 0;
-    else if (event.key === 'End') nextIndex = historicalEras.length - 1;
-    else return;
+    const nextIndex = nextTabIndex(event.key, currentIndex, historicalEras.length);
+    if (nextIndex === null) return;
     event.preventDefault();
     setActiveIndex(nextIndex);
     tabRefs.current[nextIndex]?.focus();
@@ -29,6 +25,7 @@ export default function HistoricalContext() {
               tabRefs.current[index] = element;
             }}
             key={era.id}
+            type="button"
             role="tab"
             id={`era-tab-${era.id}`}
             aria-controls={`era-panel-${era.id}`}

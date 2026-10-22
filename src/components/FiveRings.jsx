@@ -1,32 +1,14 @@
 import { useRef, useState } from 'react';
-import { rings, ringSources } from '../data/rings';
+import { rings, ringSources } from '../data/rings.js';
+import { nextTabIndex } from '../lib/tabs.js';
 
 export default function FiveRings({ onWriteFromScroll }) {
   const [activeRingId, setActiveRingId] = useState(rings[0].id);
   const tabButtons = useRef([]);
 
   function handleTabKeyDown(event, currentIndex) {
-    let nextIndex;
-
-    switch (event.key) {
-      case 'ArrowRight':
-      case 'ArrowDown':
-        nextIndex = (currentIndex + 1) % rings.length;
-        break;
-      case 'ArrowLeft':
-      case 'ArrowUp':
-        nextIndex = (currentIndex - 1 + rings.length) % rings.length;
-        break;
-      case 'Home':
-        nextIndex = 0;
-        break;
-      case 'End':
-        nextIndex = rings.length - 1;
-        break;
-      default:
-        return;
-    }
-
+    const nextIndex = nextTabIndex(event.key, currentIndex, rings.length);
+    if (nextIndex === null) return;
     event.preventDefault();
     setActiveRingId(rings[nextIndex].id);
     tabButtons.current[nextIndex]?.focus();

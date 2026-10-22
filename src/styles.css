@@ -9,6 +9,7 @@
   --muted: #5f6257;
   --line: #cec8bb;
   --serif: 'Libre Caslon Display', Georgia, serif;
+  --serif-ja: 'Yu Mincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif;
   --page-gutter: max(32px, calc((100vw - 1248px) / 2));
   font-synthesis: style;
   scroll-behavior: smooth;
@@ -443,7 +444,7 @@ h2[id] {
   margin: 0;
 }
 .quote-japanese {
-  font-family: var(--serif), 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  font-family: var(--serif), var(--serif-ja);
   font-size: clamp(27px, 2.5vw, 38px);
   line-height: 1.65;
   letter-spacing: 0.04em;
@@ -635,7 +636,7 @@ h2[id] {
   box-shadow: inset 3px 0 var(--red);
 }
 .ring-kanji {
-  font-family: serif;
+  font-family: var(--serif-ja);
   font-size: 28px;
   color: var(--red);
 }
@@ -655,7 +656,7 @@ h2[id] {
   margin-bottom: 14px;
 }
 .ring-panel-kanji {
-  font-family: serif;
+  font-family: var(--serif-ja);
   font-size: 68px;
   color: #c4b9a2;
   position: absolute;
@@ -870,7 +871,7 @@ h2[id] {
   margin-bottom: 8px;
 }
 .glossary dt > span {
-  font-family: serif;
+  font-family: var(--serif-ja);
   margin-left: 10px;
   color: var(--muted);
 }
@@ -961,7 +962,7 @@ h2[id] {
   margin-bottom: 24px;
 }
 .profile-identity > span:first-child {
-  font-family: serif;
+  font-family: var(--serif-ja);
   font-size: 25px;
   color: var(--red);
 }

@@ -6,7 +6,9 @@ import {
   exportReflections,
   journalStorageKey,
   readReflections,
+  reflectionMaxLength,
 } from '../lib/journal.js';
+import { rings } from '../data/rings.js';
 
 export default function Journal({ onClose, initialElement = 'Earth' }) {
   const [entries, setEntries] = useState(() => {
@@ -57,7 +59,8 @@ export default function Journal({ onClose, initialElement = 'Earth' }) {
     downloadLink.href = downloadUrl;
     downloadLink.download = 'ronin-reflections.txt';
     downloadLink.click();
-    URL.revokeObjectURL(downloadUrl);
+    // Safari can cancel the download if the URL is revoked in the same task.
+    setTimeout(() => URL.revokeObjectURL(downloadUrl));
   }
 
   return (
@@ -73,8 +76,8 @@ export default function Journal({ onClose, initialElement = 'Earth' }) {
           value={element}
           onChange={(event) => setElement(event.target.value)}
         >
-          {['Earth', 'Water', 'Fire', 'Wind', 'Void'].map((ringName) => (
-            <option key={ringName}>{ringName}</option>
+          {rings.map((ring) => (
+            <option key={ring.id}>{ring.title}</option>
           ))}
         </select>
         <label htmlFor="reflection-text">Your reflection</label>
@@ -83,12 +86,14 @@ export default function Journal({ onClose, initialElement = 'Earth' }) {
           placeholder="What is one thing you could approach differently?"
           value={reflection}
           onChange={(event) => setReflection(event.target.value)}
-          maxLength={2000}
+          maxLength={reflectionMaxLength}
           rows={4}
           required
         />
         <div className="journal-form-footer">
-          <span>{reflection.length} / 2000</span>
+          <span>
+            {reflection.length} / {reflectionMaxLength}
+          </span>
           <button className="button button-red" type="submit">
             Save reflection <Icon name="bookmark" size={16} />
           </button>

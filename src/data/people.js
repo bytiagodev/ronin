@@ -11,6 +11,7 @@ export const people = [
     description:
       'Nobunaga died around the time Musashi was born. His campaigns and unfinished succession shaped Musashi’s early world.',
     epithet: 'Before Musashi’s first duel',
+    storyLink: { chapter: 'beginning', label: 'Musashi’s early world' },
     introduction: [
       'Oda Nobunaga belongs in Musashi’s story because of the country he helped change. His campaigns drew central Japan under a concentration of military power, but his death in 1582 left that project unfinished. Musashi grew up while other leaders fought over what came next.',
     ],
@@ -97,6 +98,7 @@ export const people = [
     description:
       'Sekigahara and the Osaka campaigns changed the opportunities available to men like Musashi, from military service to teaching and patronage.',
     epithet: 'The ruler behind the change from war to peace',
+    storyLink: { chapter: 'wandering', label: 'The wandering years' },
     introduction: [
       'Tokugawa Ieyasu’s victories changed the conditions of Musashi’s working life. Musashi came of age while rival coalitions fought for power. By the time he settled in Kumamoto, the Tokugawa house governed from Edo and regional lords served within its political order.',
     ],
@@ -197,6 +199,7 @@ export const people = [
     description:
       'The swordsman at the centre of Musashi’s most famous encounter, remembered through an island, an early memorial and later retellings.',
     epithet: 'The other man on the island',
+    storyLink: { chapter: 'ganryujima', label: 'The duel at Ganryūjima' },
     introduction: [
       'Sasaki Kojirō is inseparable from the encounter with Musashi on Funashima, the island better known as Ganryūjima. Local history dates the fight to 1612. It ended in Kojirō’s defeat and became the best-known episode in Musashi’s reputation.',
     ],
@@ -285,6 +288,7 @@ export const people = [
     description:
       'Tadatoshi’s invitation in 1640 gave Musashi a settled base during the years in which he taught, painted and prepared his final writings.',
     epithet: 'A patron at the end of the wandering years',
+    storyLink: { chapter: 'kumamoto', label: 'The invitation to Kumamoto' },
     introduction: [
       'Hosokawa Tadatoshi’s direct place in Musashi’s life begins with an invitation. In 1640, the lord of the Higo domain welcomed the older swordsman to Kumamoto as a guest. Musashi remained there until his death five years later.',
     ],
@@ -372,6 +376,7 @@ export const people = [
     description:
       'Iori’s service in Kokura linked Musashi to a ruling household. After his father’s death, he helped establish the record through which Musashi would be remembered.',
     epithet: 'The adopted son who recorded his father’s achievements',
+    storyLink: { chapter: 'shimabara', label: 'Musashi and Iori at Shimabara' },
     introduction: [
       'Miyamoto Iori followed a more settled career than his adoptive father. He entered the service of Ogasawara Tadazane and rose to senior office in the Kokura domain. Through Iori, Musashi had a close connection to a household with military and administrative responsibilities in northern Kyushu.',
     ],

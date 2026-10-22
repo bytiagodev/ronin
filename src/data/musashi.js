@@ -24,6 +24,7 @@ export const lifeChapters = [
   },
   {
     id: 'kyoto',
+    artworkId: 'yoshioka',
     year: '1604',
     chronologyYear: 1604,
     title: 'The Yoshioka fights',
@@ -52,6 +53,7 @@ export const lifeChapters = [
   },
   {
     id: 'wandering',
+    artworkId: 'musashiPrint',
     year: '1613-1634',
     chronologyYear: 1613,
     title: 'A reputation without a fixed place',
@@ -91,6 +93,8 @@ export const lifeChapters = [
     year: '1640-43',
     chronologyYear: 1640,
     title: 'The hand that held the brush',
+    gallery: ['shrike', 'hotei', 'cormorant'],
+    galleryAfter: 1,
     paragraphs: [
       'A shrike sits above a small creature climbing a withered branch. Musashi leaves most of the paper empty. The wood rises through that space in dark and pale strokes; the bird remains poised above the insect’s movement.',
       'He painted birds, branches and figures from Buddhist and Chinese traditions, and practised calligraphy. Painting had developed before his arrival in Kumamoto and continued during his stay. In Hotei Watching a Cockfight, a bent figure watches two birds at his feet. In Cormorant, dark strokes gather around the bird’s neck and folded wings.',
@@ -99,6 +103,7 @@ export const lifeChapters = [
   },
   {
     id: 'reigando',
+    quoteFirst: true,
     year: '1643-45',
     chronologyYear: 1643,
     title: 'Writing at Reigandō',

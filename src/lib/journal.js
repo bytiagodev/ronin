@@ -1,4 +1,5 @@
 export const journalStorageKey = 'ronin.reflections.v1';
+export const reflectionMaxLength = 2000;
 
 export function readReflections(storage) {
   try {
@@ -20,7 +21,7 @@ export function readReflections(storage) {
 
 export function createReflection(text, element, id, createdAt) {
   const trimmedText = text.trim();
-  if (!trimmedText || trimmedText.length > 2000) return null;
+  if (!trimmedText || trimmedText.length > reflectionMaxLength) return null;
   return { id, text: trimmedText, element, createdAt };
 }
 
