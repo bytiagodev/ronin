@@ -213,6 +213,7 @@ function ReadingRoom() {
                 Your journal is saved in this browser on this device. It has no account or server
                 storage. Clearing site data removes the entries; use Export to keep a separate copy.
               </p>
+              <p>No generated artwork is used.</p>
             </div>
           </details>
         </div>
