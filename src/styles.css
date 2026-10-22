@@ -1619,8 +1619,6 @@ h2[id] {
   .people-card img {
     width: 100%;
     height: 290px;
-    object-fit: contain;
-    background: #e8dfcd;
   }
   .hero-buttons {
     align-items: flex-start;
@@ -1628,6 +1626,19 @@ h2[id] {
   }
   .profile-hero h1 {
     font-size: 48px;
+  }
+}
+@media (pointer: coarse) {
+  /* Touch targets reach 44px; the negative margin keeps the visual spacing unchanged. */
+  .chapter-sources summary {
+    padding-block: 12px;
+    margin-block: -12px;
+  }
+  .wordmark,
+  .hero-buttons .editorial-link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
   }
 }
 @media (prefers-reduced-motion: reduce) {
