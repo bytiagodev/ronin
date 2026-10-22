@@ -1,3 +1,4 @@
+/* Tokens and base elements */
 :root {
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
@@ -102,6 +103,7 @@ article[id],
 h2[id] {
   scroll-margin-top: 28px;
 }
+/* Shared layout, labels, links and buttons */
 .section-shell {
   padding-left: max(32px, calc((100vw - 1248px) / 2));
   padding-right: max(32px, calc((100vw - 1248px) / 2));
@@ -186,7 +188,7 @@ h2[id] {
   top: 12px;
 }
 
-/* The navigation follows the homepage reading order. */
+/* Header */
 .site-header {
   min-height: 90px;
   padding: 18px max(28px, calc((100vw - 1320px) / 2));
@@ -253,7 +255,7 @@ h2[id] {
   display: none;
 }
 
-/* The painting stays separate from the text, with its sparse composition intact. */
+/* Hero */
 .hero {
   display: grid;
   grid-template-columns: 1.12fr 0.88fr;
@@ -321,7 +323,7 @@ h2[id] {
   object-fit: contain;
 }
 
-/* The dates navigate a single continuous life, rather than replacing its text. */
+/* His life: timeline and chapters */
 .life-section {
   padding-top: 82px;
   padding-bottom: 82px;
@@ -436,7 +438,7 @@ h2[id] {
   margin-bottom: 0;
 }
 
-/* Musashi's later writing accompanies the events, with its composition date visible. */
+/* Quotations */
 .musashi-quote {
   margin: 42px 0 36px;
 }
@@ -471,7 +473,7 @@ h2[id] {
   text-underline-offset: 3px;
 }
 
-/* The print reaches the window edges while the reading column stays in place. */
+/* Ganryūjima: the print runs to the window edges while the text column stays aligned. */
 .duel-chapter {
   position: relative;
   isolation: isolate;
@@ -551,6 +553,7 @@ h2[id] {
 .life-navigation[data-theme='ink'] button:focus-visible {
   outline-color: #e6a18b;
 }
+/* Brush and Reigandō chapters */
 .brush-chapter {
   padding-top: 24px;
 }
@@ -592,7 +595,7 @@ h2[id] {
   object-fit: cover;
 }
 
-/* The five-scroll tab interaction is retained. */
+/* The five scrolls */
 .rings-section {
   padding-top: 78px;
   padding-bottom: 78px;
@@ -716,6 +719,7 @@ h2[id] {
   text-underline-offset: 3px;
 }
 
+/* The people in his story */
 .people-section {
   padding-top: 80px;
   padding-bottom: 80px;
@@ -767,6 +771,7 @@ h2[id] {
 .people-card .editorial-link {
   font-size: 12px;
 }
+/* His Japan */
 .world-section {
   padding-top: 75px;
   padding-bottom: 75px;
@@ -816,6 +821,7 @@ h2[id] {
   color: #444a3f;
 }
 
+/* Reading room */
 .reading-room {
   padding-top: 78px;
   padding-bottom: 78px;
@@ -912,6 +918,7 @@ h2[id] {
   line-height: 1.7;
   color: #444a3f;
 }
+/* Footer */
 .site-footer {
   border-top: 1px solid var(--line);
   padding-top: 35px;
@@ -927,7 +934,7 @@ h2[id] {
   margin: 0;
 }
 
-/* Supporting people retain the reading-page layout, with text-only alternatives. */
+/* Profile pages */
 .profile-breadcrumb {
   display: flex;
   flex-wrap: wrap;
@@ -1121,6 +1128,7 @@ h2[id] {
   padding-bottom: 110px;
 }
 
+/* Journal dialog */
 .modal {
   padding: 0;
   border: 1px solid var(--line);
@@ -1246,6 +1254,7 @@ h2[id] {
   margin: 15px 0 0;
 }
 
+/* Breakpoints */
 @media (max-width: 1100px) {
   .menu-toggle {
     display: grid;

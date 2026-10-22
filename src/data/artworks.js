@@ -1,5 +1,6 @@
 // Source records, rights and image dimensions are documented in public/images/figures/README.md.
-// Vite's base URL in the app; Node tests read the data without Vite and resolve from the root.
+// Vite supplies the base URL (/ronin/) in the app. Node tests import this file without
+// Vite, so the paths fall back to the root.
 const base = import.meta.env?.BASE_URL ?? '/';
 
 export const artworks = {
