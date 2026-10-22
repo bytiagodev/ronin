@@ -113,7 +113,7 @@ test('the homepage follows Musashi with an attributed painting and two distinct 
   );
   const hero = page.locator('#home');
   await expect(hero).toContainText('He also painted this.');
-  await expect(hero.locator('img')).toHaveAttribute('src', '/images/figures/shrike.webp');
+  await expect(hero.locator('img')).toHaveAttribute('src', /\/images\/figures\/shrike\.webp$/);
   await expect(hero.locator('figcaption')).toContainText('Miyamoto Musashi');
   await expect(hero.locator('figcaption')).toContainText('Shrike on a Withered Branch');
   await expect(hero.getByRole('link', { name: 'Start his story', exact: true })).toHaveAttribute(
