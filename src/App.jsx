@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Icon, { Crest } from './components/Icon.jsx';
+import Icon, { Seal } from './components/Icon.jsx';
 import MusashiLife from './components/MusashiLife.jsx';
 import FiveRings from './components/FiveRings.jsx';
 import People from './components/People.jsx';
@@ -54,7 +54,7 @@ function Header({ onOpenJournal, profileOpen }) {
         aria-label="Rōnin home"
         onClick={() => setMenuOpen(false)}
       >
-        <Crest />
+        <Seal />
         <span>
           RŌNIN<span className="wordmark-dot">.</span>
         </span>
@@ -226,7 +226,7 @@ function Footer() {
   return (
     <footer className="site-footer section-shell">
       <a className="wordmark" href="#home">
-        <Crest />
+        <Seal />
         <span>
           RŌNIN<span className="wordmark-dot">.</span>
         </span>

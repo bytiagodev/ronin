@@ -207,10 +207,9 @@ h2[id] {
   letter-spacing: 2px;
   white-space: nowrap;
 }
-.wordmark svg {
+.seal {
   width: 34px;
   height: 34px;
-  color: var(--red);
 }
 .wordmark-dot {
   color: var(--red);
@@ -1306,7 +1305,7 @@ h2[id] {
     font-size: 22px;
     gap: 8px;
   }
-  .wordmark svg {
+  .seal {
     width: 29px;
     height: 29px;
   }
@@ -1610,7 +1609,7 @@ h2[id] {
     font-size: 20px;
     gap: 6px;
   }
-  .wordmark svg {
+  .seal {
     width: 25px;
     height: 25px;
   }
