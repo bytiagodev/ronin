@@ -9,6 +9,7 @@ import Journal from './components/Journal.jsx';
 import Artwork from './components/Artwork.jsx';
 import { artworks } from './data/artworks.js';
 import { findProfile } from './data/profiles.js';
+import { glossary, readingSources } from './data/reading.js';
 import { readPageRoute } from './lib/routes.js';
 
 const navigation = [
@@ -130,6 +131,96 @@ function Hero() {
   );
 }
 
+function ReadingRoom() {
+  return (
+    <section
+      id="reading-room"
+      className="reading-room section-shell"
+      aria-labelledby="reading-title"
+    >
+      <div className="section-heading">
+        <h2 id="reading-title">Reading room</h2>
+        <p>Sources for Musashi’s life, his writing and the people around him.</p>
+      </div>
+      <div className="reading-layout">
+        <div className="reading-note">
+          <h3>Read Musashi alongside the records.</h3>
+          <p>
+            The opening of the Five Rings is his own account of his training and victories. Letters,
+            surviving paintings and later memorials provide other views of the man. The sources
+            below identify which kind of evidence supports each part of the story.
+          </p>
+          <a
+            className="editorial-link"
+            href="https://www.koten.net/gorin/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            The Five Rings, Japanese text
+          </a>
+        </div>
+        <div className="reading-accordions">
+          <details>
+            <summary>
+              Terms in the story<span aria-hidden="true">+</span>
+            </summary>
+            <dl className="glossary">
+              {glossary.map((entry) => (
+                <div key={entry.term}>
+                  <dt>
+                    {entry.term} <span lang="ja">{entry.kanji}</span>
+                  </dt>
+                  <dd>{entry.definition}</dd>
+                </div>
+              ))}
+            </dl>
+          </details>
+          <details>
+            <summary>
+              Sources and further reading<span aria-hidden="true">+</span>
+            </summary>
+            <ul className="sources-list">
+              {readingSources.map((source) => (
+                <li key={source.url}>
+                  <a href={source.url} target="_blank" rel="noreferrer">
+                    {source.title}
+                  </a>
+                  <p>{source.note}</p>
+                </li>
+              ))}
+            </ul>
+          </details>
+          <details>
+            <summary>
+              About this site<span aria-hidden="true">+</span>
+            </summary>
+            <div className="about-guide">
+              <p>
+                RŌNIN follows Miyamoto Musashi’s life. The narrative uses original summaries of his
+                writing and institutional sources. Accounts written after his death are considered
+                alongside surviving documents, rather than treated as equally certain.
+              </p>
+              <p>
+                Historical images are accompanied by captions identifying their makers, dates and
+                source records. A later print is not an eyewitness account. All bundled artwork has
+                a linked public-domain rights record.
+              </p>
+              <p>
+                The scroll summaries paraphrase Musashi’s text. The reflection questions and
+                exercises are modern interpretations, not quotations or martial instruction.
+              </p>
+              <p>
+                Your journal is saved in this browser on this device. It has no account or server
+                storage. Clearing site data removes the entries; use Export to keep a separate copy.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   return (
     <footer className="site-footer section-shell">
@@ -200,6 +291,7 @@ export default function App() {
           <FiveRings onWriteFromScroll={setJournalRing} />
           <People />
           <HistoricalContext />
+          <ReadingRoom />
         </div>
         {activeProfile && <ProfilePage key={activeProfile.id} profile={activeProfile} />}
         {route.kind === 'profile' && !activeProfile && (

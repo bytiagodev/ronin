@@ -1,5 +1,11 @@
 # Historic artwork
 
+The artwork serves the life of Miyamoto Musashi and the people who shaped his world. The Wikimedia Commons imageinfo API and the linked rights records were checked on 19 October 2026 for the six new images. The three retained images were checked on 18 October 2026. All nine files are explicitly marked Public domain. Attribution is retained even when not legally required.
+
+New assets: shrike.webp, ganryujima.webp, hotei.webp, yoshioka.webp, tadatoshi.webp and cormorant.webp. Retained assets: musashi.webp, nobunaga.webp and ieyasu.webp. The artworks export uses the key musashiPrint for musashi.webp.
+
+Images were resized proportionally to a maximum edge of 1600 pixels and converted to WebP. Every file is below 250000 bytes. No compositing, generated content, recoloring or retouching was applied. Full source compositions are retained; the UI may frame them with CSS. Width and height in src/data/artworks.js match the local files exactly. Artwork dates and source upload dates are separate; uncertain artwork dates remain unrecorded rather than guessed.
+
 ## shrike.webp
 
 - Work: Shrike on a Withered Branch (Kobokumeigeki-zu).
@@ -128,3 +134,9 @@ The Commons source is a reproduction from the 1992 Japanese catalogue Higo no Ga
 - Editorial context: Miyamoto Musashi, Cormorant, 17th century. Ink on paper. Eisei Bunko Museum, entrusted to Kumamoto Prefectural Museum of Art.
 
 The collection, artist and seventeenth-century dating were independently checked in [Eisei Bunko Museum’s Spring 2022 exhibition](https://www.eiseibunko.com/test/english/past_exhibitions2022.html) and its [list of works, item 9](https://www.eiseibunko.com/test/images_exhibition/2022/2022Spring_list_English.pdf). The museum’s reference image was visually compared with the downloaded Commons image and matches the same painting. The source image record is https://www.jstor.org/stable/community.13600109 . The Commons description contains an unrelated vandalized author sentence; the structured artist field, original image record and museum attribution identify Musashi. That sentence was not used as evidence.
+
+## Miyamoto Iori portrait search
+
+Wikimedia Commons file searches were run on 19 October 2026 for `Miyamoto Iori`, `宮本伊織` and `宮本伊織 肖像`. The first returned five files, mainly modern statue photographs and a grave; the Japanese portrait search returned no files. The broader Japanese query returned seventeen files, including books and modern site photographs, without an identified historic portrait.
+
+The apparent portrait candidates [Miyamoto Iori.jpg](https://commons.wikimedia.org/wiki/File:Miyamoto_Iori.jpg) and [Miyamoto Iori cropped.jpg](https://commons.wikimedia.org/wiki/File:Miyamoto_Iori_cropped.jpg) are crops of [a 2014 modern statue photograph](https://commons.wikimedia.org/wiki/File:Musashi_Iori_zo.jpg), all licensed CC BY-SA 3.0, not public domain. They were not downloaded or presented as historical portraits. No verified public-domain portrait of Iori was found, so no image is assigned to him.
