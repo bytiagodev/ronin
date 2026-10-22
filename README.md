@@ -7,6 +7,8 @@
   <sub>The life, writing and paintings of Miyamoto Musashi.</sub>
 </p>
 
+<p align="center"><a href="https://bytiagodev.github.io/ronin/"><strong>Read the site</strong></a></p>
+
 ---
 
 I started reading about samurai and ended up reading about one man. Miyamoto Musashi fought his first duel at thirteen, crossed the water to face Sasaki Kojirō, spent decades moving between towns and patrons, and in his last years sat in a cave near Kumamoto writing a book about strategy. He also painted birds with a handful of ink strokes and left most of the paper empty around them.

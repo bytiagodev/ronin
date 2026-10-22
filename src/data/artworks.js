@@ -1,7 +1,10 @@
 // Source records, rights and image dimensions are documented in public/images/figures/README.md.
+// Vite's base URL in the app; Node tests read the data without Vite and resolve from the root.
+const base = import.meta.env?.BASE_URL ?? '/';
+
 export const artworks = {
   shrike: {
-    src: '/images/figures/shrike.webp',
+    src: `${base}images/figures/shrike.webp`,
     alt: 'A small shrike perched high on a long bare branch, painted in pale and dark ink on paper.',
     title: 'Shrike on a Withered Branch (Kobokumeigeki-zu)',
     artist: 'Miyamoto Musashi',
@@ -17,7 +20,7 @@ export const artworks = {
     height: 1600,
   },
   ganryujima: {
-    src: '/images/figures/ganryujima.webp',
+    src: `${base}images/figures/ganryujima.webp`,
     alt: 'Woodblock triptych showing two swordsmen facing each other on a shoreline, watched by people beneath pine trees.',
     title: 'Miyamoto Musashi Fights Sasaki Kojirō at Ganryūjima',
     artist: 'Utagawa Yoshitora',
@@ -34,7 +37,7 @@ export const artworks = {
     height: 813,
   },
   hotei: {
-    src: '/images/figures/hotei.webp',
+    src: `${base}images/figures/hotei.webp`,
     alt: 'Hotei bends over to watch two fighting cocks in an ink painting with broad black brushstrokes and open paper.',
     title: 'Hotei Watching a Cockfight',
     artist: 'Miyamoto Musashi',
@@ -50,7 +53,7 @@ export const artworks = {
     height: 1377,
   },
   yoshioka: {
-    src: '/images/figures/yoshioka.webp',
+    src: `${base}images/figures/yoshioka.webp`,
     alt: 'Three-sheet woodblock print of actors playing Sekiguchi Yatarō, Yoshioka Kanefusa and Miyamoto Musashi with swords in a night scene.',
     title: 'Actors as Sekiguchi Yatarō, Yoshioka Kanefusa and Miyamoto Musashi',
     artist: 'Attributed to Enryōsai Shigemitsu',
@@ -67,7 +70,7 @@ export const artworks = {
     height: 520,
   },
   musashiPrint: {
-    src: '/images/figures/musashi.webp',
+    src: `${base}images/figures/musashi.webp`,
     alt: 'Kuniyoshi woodblock print showing Miyamoto Musashi drawing his sword beneath a theatrical figure in flowing robes.',
     title: 'Miyamoto Musashi (宮本無三四)',
     artist: 'Utagawa Kuniyoshi',
@@ -84,7 +87,7 @@ export const artworks = {
     height: 1600,
   },
   nobunaga: {
-    src: '/images/figures/nobunaga.webp',
+    src: `${base}images/figures/nobunaga.webp`,
     alt: 'Oda Nobunaga seated in green and white robes beneath Japanese inscriptions in a painted portrait.',
     title: 'Portrait of Oda Nobunaga',
     artist: 'Kanō Sōshū',
@@ -100,7 +103,7 @@ export const artworks = {
     height: 1600,
   },
   ieyasu: {
-    src: '/images/figures/ieyasu.webp',
+    src: `${base}images/figures/ieyasu.webp`,
     alt: 'Tokugawa Ieyasu seated in black robes beneath decorated curtains in a seventeenth-century hanging-scroll portrait.',
     title: 'Portrait of Tokugawa Ieyasu',
     artist: 'Kanō Tan’yū',
@@ -115,7 +118,7 @@ export const artworks = {
     height: 1600,
   },
   tadatoshi: {
-    src: '/images/figures/tadatoshi.webp',
+    src: `${base}images/figures/tadatoshi.webp`,
     alt: 'Hosokawa Tadatoshi seated in black formal robes beneath an inscription, holding a ceremonial tablet.',
     title: 'Portrait of Hosokawa Tadatoshi',
     artist: 'Yano Yoshishige, inscription by Ōbuchi Genkō',
@@ -131,7 +134,7 @@ export const artworks = {
     height: 1600,
   },
   cormorant: {
-    src: '/images/figures/cormorant.webp',
+    src: `${base}images/figures/cormorant.webp`,
     alt: 'A cormorant turns its long neck above a rock, its dark feathers formed from layered ink brushstrokes.',
     title: 'Cormorant (U-zu)',
     artist: 'Miyamoto Musashi',
