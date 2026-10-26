@@ -113,6 +113,9 @@ function Hero() {
         </p>
         <h1 id="hero-title">By his own count, he won more than sixty duels.</h1>
         <p className="hero-contrast">He also painted this.</p>
+      </div>
+      <Artwork artwork={artworks.shrike} className="hero-artwork" priority />
+      <div className="hero-more">
         <p className="hero-description">
           Follow Musashi from his first duel at thirteen to his final years in Kumamoto. Meet his
           rivals and patrons, and see the paintings and writing he left behind.
@@ -126,7 +129,6 @@ function Hero() {
           </a>
         </div>
       </div>
-      <Artwork artwork={artworks.shrike} className="hero-artwork" priority />
     </section>
   );
 }

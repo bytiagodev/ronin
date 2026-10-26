@@ -271,14 +271,26 @@ h2[id] {
 .hero {
   display: grid;
   grid-template-columns: 1.12fr 0.88fr;
-  align-items: center;
-  gap: 70px;
+  /* The painting follows "He also painted this." in reading order; on wide screens it
+     sits beside the text, which stays vertically centred against it. */
+  grid-template-areas:
+    '. art'
+    'copy art'
+    'more art'
+    '. art';
+  grid-template-rows: 1fr auto auto 1fr;
+  column-gap: 70px;
   padding-top: 58px;
   padding-bottom: 65px;
   position: relative;
 }
 .hero-copy {
-  padding: 24px 0;
+  grid-area: copy;
+  padding-top: 24px;
+}
+.hero-more {
+  grid-area: more;
+  padding-bottom: 24px;
 }
 .hero-copy > .eyebrow {
   margin-bottom: 27px;
@@ -327,6 +339,8 @@ h2[id] {
 }
 .hero-artwork {
   --painting-height: 680px;
+  grid-area: art;
+  align-self: center;
   width: min(100%, calc(var(--painting-height) * 691 / 1600));
   justify-self: center;
 }
@@ -1436,7 +1450,7 @@ body::before {
     padding: 12px 0;
   }
   .hero {
-    gap: 35px;
+    column-gap: 35px;
   }
   .life-layout,
   .profile-reading-layout {
@@ -1490,12 +1504,22 @@ body::before {
   }
   .hero {
     grid-template-columns: 1fr;
-    gap: 30px;
+    grid-template-areas:
+      'copy'
+      'art'
+      'more';
+    grid-template-rows: auto;
     padding-top: 37px;
     padding-bottom: 40px;
   }
   .hero-copy {
     padding: 0;
+  }
+  .hero-contrast {
+    margin-bottom: 30px;
+  }
+  .hero-more {
+    padding: 34px 0 0;
   }
   .hero h1 {
     font-size: clamp(42px, 10.5vw, 60px);
@@ -1510,7 +1534,7 @@ body::before {
     gap: 21px;
   }
   .hero-artwork {
-    --painting-height: 540px;
+    --painting-height: 400px;
   }
   .life-section {
     padding-top: 48px;
