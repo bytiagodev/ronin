@@ -131,6 +131,7 @@ export const people = [
         sourceIds: ['ieyasu-osaka', 'ieyasu-peace'],
       },
     ],
+    timelineSourceIds: ['ieyasu-death'],
     timeline: [
       {
         year: '1600',
@@ -406,6 +407,7 @@ export const people = [
         sourceIds: ['iori-memorial'],
       },
     ],
+    timelineSourceIds: ['iori-dates'],
     timeline: [
       {
         year: '1620s',

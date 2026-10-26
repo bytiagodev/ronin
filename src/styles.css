@@ -1087,50 +1087,27 @@ body::before {
   margin: 0;
   color: #444a3f;
 }
-.sources-list,
-.profile-sources ul {
+.sources-list {
   margin: 0 0 25px;
   padding: 0;
   list-style: none;
-  counter-reset: source;
 }
-.sources-list li,
-.profile-sources li {
-  position: relative;
-  padding: 12px 0 12px 44px;
-  counter-increment: source;
+.sources-list li {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
 }
-.sources-list li::before,
-.profile-sources li::before {
-  content: counter(source);
-  position: absolute;
-  left: 0;
-  top: 12px;
-  font-family: var(--serif-text);
-  font-size: 19px;
-  line-height: 1.45;
-  color: var(--red);
-}
-.sources-list a,
-.profile-sources a {
-  font-family: var(--serif-text);
-  font-size: 19px;
-  line-height: 1.45;
+.sources-list a {
+  font-size: var(--text-sm);
+  line-height: 1.7;
   text-decoration: underline;
-  text-underline-offset: 5px;
-  text-decoration-color: #a69d88;
+  text-underline-offset: 4px;
   overflow-wrap: anywhere;
 }
-.sources-list a:hover,
-.profile-sources a:hover {
-  color: var(--red);
-}
-.sources-list p,
-.profile-sources li p {
-  font-size: 15px;
+.sources-list p {
+  font-size: var(--text-sm);
   color: var(--muted);
-  line-height: 1.6;
-  margin: 6px 0 0;
+  line-height: 1.7;
+  margin: 10px 0 0;
 }
 .about-guide p {
   font-size: 16px;
@@ -1282,13 +1259,13 @@ body::before {
   padding: 0;
   margin: 0;
 }
-.profile-chronology li {
+.profile-chronology ol > li {
   display: grid;
   grid-template-columns: 100px 1fr;
   gap: 24px;
   padding: 14px 0;
 }
-.profile-chronology li > span {
+.profile-chronology ol > li > span {
   font-family: var(--serif-text);
   font-size: 25px;
   color: var(--red);
@@ -1790,11 +1767,11 @@ body::before {
   .profile-prose h2 {
     font-size: 34px;
   }
-  .profile-chronology li {
+  .profile-chronology ol > li {
     grid-template-columns: 80px 1fr;
     gap: 16px;
   }
-  .profile-chronology li > span {
+  .profile-chronology ol > li > span {
     font-size: 23px;
   }
 

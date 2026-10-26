@@ -103,6 +103,13 @@ test('every people chapter cites its own supporting records with valid HTTPS sou
       for (const sourceId of section.sourceIds)
         assert.ok(ownSourceIds.has(sourceId), `${profile.id}: missing ${sourceId}`);
     }
+    // Sources are shown where they are used, so each one must be cited by a section or the chronology.
+    const citedSourceIds = new Set([
+      ...profile.sections.flatMap((section) => section.sourceIds),
+      ...(profile.timelineSourceIds ?? []),
+    ]);
+    for (const sourceId of ownSourceIds)
+      assert.ok(citedSourceIds.has(sourceId), `${profile.id}: ${sourceId} is never shown`);
   }
 });
 

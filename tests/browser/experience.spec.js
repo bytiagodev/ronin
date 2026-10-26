@@ -413,9 +413,8 @@ for (const [personId, personName] of connectedPeople) {
     const contents = profile.getByRole('navigation', { name: 'Profile contents' });
     await contents.getByRole('button', { name: 'Connection to Musashi', exact: true }).click();
     await expect(profile.locator('#profile-introduction')).toBeFocused();
-    await contents.getByRole('button', { name: 'Sources', exact: true }).click();
-    await expect(profile.locator('#profile-sources')).toBeFocused();
-    expect(await profile.locator('.profile-sources li').count()).toBeGreaterThan(0);
+    await expect(contents.getByRole('button', { name: 'Sources', exact: true })).toHaveCount(0);
+    await expect(profile.locator('.profile-sources')).toHaveCount(0);
     await checkImageDimensions(profile.locator('img'));
     await checkVisibleCopyAndFonts(page);
     await checkNoOverflow(page, `${personName} should fit the viewport`);

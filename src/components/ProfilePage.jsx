@@ -71,7 +71,6 @@ export default function ProfilePage({ profile }) {
               </button>
             ))}
             <button onClick={() => jumpToSection('profile-chronology')}>Chronology</button>
-            <button onClick={() => jumpToSection('profile-sources')}>Sources</button>
           </nav>
         </aside>
         <div className="profile-prose">
@@ -113,27 +112,19 @@ export default function ProfilePage({ profile }) {
                 </li>
               ))}
             </ol>
+            {profile.timelineSourceIds && (
+              <ChapterSources
+                sources={profile.timelineSourceIds
+                  .map((sourceId) => profile.sources.find((source) => source.id === sourceId))
+                  .filter(Boolean)}
+              />
+            )}
           </section>
           <section className="profile-legacy">
             <h2>{profile.legacy.title}</h2>
             {profile.legacy.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-          </section>
-          <section className="profile-sources">
-            <h2 id="profile-sources" tabIndex={-1}>
-              Sources
-            </h2>
-            <ul>
-              {profile.sources.map((source) => (
-                <li key={source.id}>
-                  <a href={source.url} target="_blank" rel="noreferrer">
-                    {source.title}
-                  </a>
-                  <p>{source.note}</p>
-                </li>
-              ))}
-            </ul>
           </section>
           <a className="button button-dark" href={`#life-${profile.storyLink.chapter}`}>
             Return to Musashi’s story
