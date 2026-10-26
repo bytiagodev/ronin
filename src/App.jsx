@@ -298,7 +298,7 @@ export default function App() {
               This person is not in the story.
             </h1>
             <p>Return to the people connected with Musashi.</p>
-            <a className="button button-dark" href="#people">
+            <a className="editorial-link" href="#people">
               The people in his story
             </a>
           </section>

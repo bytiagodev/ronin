@@ -1833,7 +1833,10 @@ body::before {
     min-height: 44px;
     padding-block: 0;
   }
-  .wordmark {
+  .wordmark,
+  .profile-hero-copy > .editorial-link,
+  .profile-prose > .editorial-link,
+  .missing-profile .editorial-link {
     min-height: 44px;
     display: inline-flex;
     align-items: center;

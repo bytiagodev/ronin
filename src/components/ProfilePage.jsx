@@ -129,7 +129,7 @@ export default function ProfilePage({ profile }) {
               <p key={paragraph}>{paragraph}</p>
             ))}
           </section>
-          <a className="button button-dark" href={`#life-${profile.storyLink.chapter}`}>
+          <a className="editorial-link" href={`#life-${profile.storyLink.chapter}`}>
             Return to Musashi’s story
           </a>
         </div>
