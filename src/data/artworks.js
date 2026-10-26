@@ -72,6 +72,21 @@ export const artworks = {
     width: 1024,
     height: 520,
   },
+  portrait: {
+    src: `${base}images/figures/portrait.webp`,
+    alt: 'Musashi standing barefoot in a red vest over white robes, holding a long and a short sword pointed down at his sides, on plain brown paper.',
+    title: 'Portrait of Miyamoto Musashi',
+    artist: 'Traditionally attributed to Miyamoto Musashi',
+    date: '17th century',
+    institution: 'Shimada Museum of Arts, Kumamoto',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Miyamoto_Musashi_Self-Portrait.jpg',
+    license: 'Public domain',
+    licenseUrl: 'https://creativecommons.org/publicdomain/mark/1.0/',
+    caption:
+      'Portrait of Miyamoto Musashi, 17th century. Shimada Museum of Arts, Kumamoto. Often called a self-portrait; the museum describes it as painted after his death by someone who seems to have known him.',
+    width: 766,
+    height: 1600,
+  },
   musashiPrint: {
     src: `${base}images/figures/musashi.webp`,
     alt: 'Kuniyoshi woodblock print showing Miyamoto Musashi drawing his sword beneath a theatrical figure in flowing robes.',

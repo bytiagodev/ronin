@@ -1,8 +1,8 @@
 # Historic artwork
 
-The artwork serves the life of Miyamoto Musashi and the people who shaped his world. The Wikimedia Commons imageinfo API and the linked rights records were checked on 19 October 2026 for the six new images. The three retained images were checked on 18 October 2026. All nine files are explicitly marked Public domain. Attribution is retained even when not legally required.
+The artwork serves the life of Miyamoto Musashi and the people who shaped his world. The Wikimedia Commons imageinfo API and the linked rights records were checked on 19 October 2026 for the six new images. The three retained images were checked on 18 October 2026. The portrait was checked on 26 October 2026. All ten files are explicitly marked Public domain. Attribution is retained even when not legally required.
 
-New assets: shrike.webp, ganryujima.webp, hotei.webp, yoshioka.webp, tadatoshi.webp and cormorant.webp. Retained assets: musashi.webp, nobunaga.webp and ieyasu.webp. The artworks export uses the key musashiPrint for musashi.webp.
+New assets: shrike.webp, ganryujima.webp, hotei.webp, yoshioka.webp, tadatoshi.webp and cormorant.webp. Retained assets: musashi.webp, nobunaga.webp and ieyasu.webp. Added later: portrait.webp. The artworks export uses the key musashiPrint for musashi.webp.
 
 Images were resized proportionally to a maximum edge of 1600 pixels and converted to WebP. Every file is below 250000 bytes. No compositing, generated content, recoloring or retouching was applied. Full source compositions are retained; the UI may frame them with CSS. Width and height in src/data/artworks.js match the local files exactly. Artwork dates and source upload dates are separate; uncertain artwork dates remain unrecorded rather than guessed.
 
@@ -140,3 +140,18 @@ The collection, artist and seventeenth-century dating were independently checked
 Wikimedia Commons file searches were run on 19 October 2026 for `Miyamoto Iori`, `宮本伊織` and `宮本伊織 肖像`. The first returned five files, mainly modern statue photographs and a grave; the Japanese portrait search returned no files. The broader Japanese query returned seventeen files, including books and modern site photographs, without an identified historic portrait.
 
 The apparent portrait candidates [Miyamoto Iori.jpg](https://commons.wikimedia.org/wiki/File:Miyamoto_Iori.jpg) and [Miyamoto Iori cropped.jpg](https://commons.wikimedia.org/wiki/File:Miyamoto_Iori_cropped.jpg) are crops of [a 2014 modern statue photograph](https://commons.wikimedia.org/wiki/File:Musashi_Iori_zo.jpg), all licensed CC BY-SA 3.0, not public domain. They were not downloaded or presented as historical portraits. No verified public-domain portrait of Iori was found, so no image is assigned to him.
+
+## portrait.webp
+
+- Work: Portrait of Miyamoto Musashi (宮本武蔵像), long known as his self-portrait.
+- Artist: traditionally attributed to Miyamoto Musashi. Commons lists him as the author. The Shimada Museum of Arts describes the work as a posthumous portrait, because the subject faces left, a convention for the deceased, by a painter who seems to have been familiar with Musashi and his philosophy.
+- Artwork date: 17th century (Commons: early 17th century).
+- Collection or credited image source: Shimada Museum of Arts, Kumamoto.
+- Source and rights record: [Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:Miyamoto_Musashi_Self-Portrait.jpg).
+- Original image: [download URL](https://upload.wikimedia.org/wikipedia/commons/4/42/Miyamoto_Musashi_Self-Portrait.jpg).
+- Rights: **Public domain**. The file page applies PD-Art / PD-old-auto-expired and PD-old-100-expired and the Public Domain Mark. The work dates from the 17th century, so it is public domain whoever painted it.
+- Public Domain Mark explanation: https://creativecommons.org/publicdomain/mark/1.0/
+- Local derivative: 766 x 1600 pixels, 208,380 bytes.
+- Editorial context: Portrait of Miyamoto Musashi, 17th century. Shimada Museum of Arts, Kumamoto. Often called a self-portrait; the museum describes it as painted after his death by someone who seems to have known him.
+
+The museum's description is published in the Japan Tourism Agency's multilingual database: https://www.mlit.go.jp/tagengo-db/R2-02044.html .

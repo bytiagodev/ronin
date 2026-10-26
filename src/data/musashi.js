@@ -116,6 +116,7 @@ export const lifeChapters = [
   },
   {
     id: 'death',
+    artworkId: 'portrait',
     year: '1645',
     chronologyYear: 1645,
     title: 'What he left behind',
