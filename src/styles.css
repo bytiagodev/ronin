@@ -1194,18 +1194,18 @@ body::before {
   color: #444a3f;
 }
 .profile-facts {
+  margin: 4px 0 28px;
+}
+.profile-facts > div {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 30px;
-  padding-top: 28px;
-  padding-bottom: 28px;
-  margin: 0;
-  background: #e8e3d7;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 16px;
+  padding: 5px 0;
 }
 .profile-facts dt {
-  font-size: var(--text-xs);
-  color: var(--red);
-  margin-bottom: 10px;
+  font-size: var(--text-sm);
+  color: var(--muted);
+  line-height: 1.7;
 }
 .profile-facts dd {
   font-size: 16px;
@@ -1268,7 +1268,7 @@ body::before {
 .profile-chronology ol > li > span {
   font-family: var(--serif-text);
   font-size: 25px;
-  color: var(--red);
+  color: #51574a;
 }
 .profile-chronology h3 {
   font-family: var(--serif-text);
@@ -1750,9 +1750,9 @@ body::before {
   .profile-artwork img {
     max-height: 440px;
   }
-  .profile-facts {
-    grid-template-columns: 1fr 1fr;
-    gap: 25px 20px;
+  .profile-facts > div {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
   .profile-reading-layout {
     padding-top: 33px;

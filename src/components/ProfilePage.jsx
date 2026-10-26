@@ -32,6 +32,17 @@ export default function ProfilePage({ profile }) {
             <span>{profile.years}</span>
           </div>
           <p className="profile-standfirst">{profile.description}</p>
+          <dl className="profile-facts">
+            {/* The years already sit beside the name, so a period that repeats them is left out. */}
+            {profile.facts
+              .filter((fact) => fact.value !== profile.years)
+              .map((fact) => (
+                <div key={fact.label}>
+                  <dt>{fact.label}</dt>
+                  <dd>{fact.value}</dd>
+                </div>
+              ))}
+          </dl>
           <a className="editorial-link" href="#people">
             Back to the people in his story
           </a>
@@ -48,14 +59,6 @@ export default function ProfilePage({ profile }) {
           </aside>
         )}
       </header>
-      <dl className="profile-facts section-shell">
-        {profile.facts.map((fact) => (
-          <div key={fact.label}>
-            <dt>{fact.label}</dt>
-            <dd>{fact.value}</dd>
-          </div>
-        ))}
-      </dl>
       <div className="profile-reading-layout section-shell">
         <aside className="profile-contents">
           <nav aria-label="Profile contents">
