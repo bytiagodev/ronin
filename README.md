@@ -30,11 +30,11 @@ RŌNIN is the place I wanted while I was reading about him: his life told as one
 
 ## Water · The look
 
-The site borrows its look from his paintings: ivory paper, black ink and one vermilion, with a lot of empty space. The hero is his own Shrike on a Withered Branch, not an illustration of him. Libre Caslon Display carries the headings, DM Sans the reading text and Yuji Syuku, a brush face, his words in Japanese. The page goes dark once, for the crossing to Ganryūjima, and the timeline darkens with it as you scroll past.
+The site borrows its look from his paintings: ivory paper with a little grain, black ink and one vermilion, with a lot of empty space. The hero is his own Shrike on a Withered Branch, not an illustration of him, and his ink paintings sit in the paper rather than on top of it. Where a page would usually draw a line, there is a brush stroke, and no two strokes in a row are the same. Libre Caslon Display carries the headings, Libre Caslon Text the smaller serif type, DM Sans the reading text and Yuji Syuku, a brush face, his words in Japanese. The page goes dark once, for the crossing to Ganryūjima, which begins and ends in torn ink, and the timeline darkens where it passes over it.
 
 ## Fire · The build
 
-React and Vite, plain JavaScript and CSS. The story, quotations, people and turning points live in data modules, separate from the components that show them. The life timeline follows your reading as you scroll, profile pages use hash routes such as `#people/kojiro`, and the journal stores notes in `localStorage`, so nothing leaves your browser.
+React and Vite, plain JavaScript and CSS. The story, quotations, people and turning points live in data modules, separate from the components that show them. The life timeline follows your reading as you scroll, profile pages use hash routes such as `#people/kojiro`, and the journal stores notes in `localStorage`, so nothing leaves your browser. The brush face is cut down to the characters the site uses, so after adding Japanese text, `scripts/build-brush-font.py` rebuilds it; a test fails until it does.
 
 ```sh
 npm install
