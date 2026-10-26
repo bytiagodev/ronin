@@ -175,12 +175,13 @@ test('the three set pieces retain the sticky timeline and fit the viewport', asy
   await timeline.getByRole('button', { name: /Across the water/ }).click();
   const duel = page.locator('#life-ganryujima');
   await expect(duel).toHaveClass(/duel-chapter/);
-  await expect(timeline).toHaveAttribute('data-theme', 'ink');
   const printBounds = await duel.locator('img').boundingBox();
   expect(Math.abs(printBounds.x)).toBeLessThan(1);
   expect(Math.abs(printBounds.width - page.viewportSize().width)).toBeLessThan(1);
   await duel.locator('.musashi-quote').scrollIntoViewIfNeeded();
   await expect(timeline).toBeInViewport();
+  // The timeline darkens while it lies over the crossing's ink.
+  await expect(timeline).toHaveAttribute('data-theme', 'ink');
   await timeline.getByRole('button', { name: /The hand that held/ }).click();
   await expect(timeline).toHaveAttribute('data-theme', 'paper');
   const gallery = page.locator('#life-brush .brush-gallery');

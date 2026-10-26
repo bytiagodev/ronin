@@ -14,6 +14,7 @@ const chapterTreatments = {
 
 export default function MusashiLife() {
   const [activeChapter, setActiveChapter] = useState(lifeChapters[0].id);
+  const [overInk, setOverInk] = useState(false);
   const navigationRef = useRef(null);
   useEffect(() => {
     if (!window.matchMedia('(max-width: 760px)').matches) return;
@@ -34,8 +35,45 @@ export default function MusashiLife() {
     // at 35% of the viewport so a chapter becomes current once its heading is being read.
     // Checking on every scrolled frame keeps the timeline right after instant jumps.
     let frame = 0;
+    // The timeline darkens only where it crosses the Ganryūjima ink, so it never hangs past
+    // the torn edges as a dark rectangle. The edge is ragged, so the opaque band starts a
+    // little inside the chapter's box.
+    const edgeInset = 30;
+    function updateInk() {
+      const navigation = navigationRef.current;
+      const duel = document.getElementById('life-ganryujima');
+      if (!navigation || !duel) return;
+      const band = duel.getBoundingClientRect();
+      const navigationBox = navigation.getBoundingClientRect();
+      const inkTop = band.top + edgeInset;
+      const inkBottom = band.bottom - edgeInset;
+      const isOverInk = (box) => {
+        const middle = box.top + box.height / 2;
+        return middle > inkTop && middle < inkBottom;
+      };
+      const wholeBarOverInk = isOverInk(navigationBox);
+      // On small screens the timeline is a full-width bar, which flips as a whole.
+      const isBar = window.matchMedia('(max-width: 760px)').matches;
+      const clamp = (value) => Math.min(Math.max(value, 0), navigationBox.height);
+      const from = isBar ? 0 : clamp(inkTop - navigationBox.top);
+      const to = isBar
+        ? wholeBarOverInk
+          ? navigationBox.height
+          : 0
+        : clamp(inkBottom - navigationBox.top);
+      navigation.style.setProperty('--ink-from', `${from}px`);
+      navigation.style.setProperty('--ink-to', `${to}px`);
+      for (const line of navigation.querySelectorAll('button > span')) {
+        line.toggleAttribute(
+          'data-ink',
+          isBar ? wholeBarOverInk : isOverInk(line.getBoundingClientRect()),
+        );
+      }
+      setOverInk(wholeBarOverInk);
+    }
     function updateActiveChapter() {
       frame = 0;
+      updateInk();
       const readingLine = window.innerHeight * 0.35;
       const currentChapter = lifeChapters.findLast((chapter) => {
         const element = document.getElementById(`life-${chapter.id}`);
@@ -71,7 +109,7 @@ export default function MusashiLife() {
         <nav
           ref={navigationRef}
           className="life-navigation"
-          data-theme={activeChapter === 'ganryujima' ? 'ink' : 'paper'}
+          data-theme={overInk ? 'ink' : 'paper'}
           aria-label="Musashi life timeline"
         >
           {lifeChapters.map((chapter) => (

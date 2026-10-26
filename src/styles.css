@@ -463,7 +463,16 @@ body::before {
   display: flex;
   flex-direction: column;
   z-index: 5;
-  background: var(--paper);
+  /* Ink fills only the stretch that lies over the Ganryūjima band (set from script). */
+  background:
+    linear-gradient(
+        transparent var(--ink-from, 0),
+        #262a26 var(--ink-from, 0),
+        #262a26 var(--ink-to, 0),
+        transparent var(--ink-to, 0)
+      )
+      no-repeat,
+    var(--paper);
 }
 .life-navigation button {
   background: transparent;
@@ -678,20 +687,16 @@ body::before {
 .duel-chapter a:hover {
   color: #f1baa5;
 }
-.life-navigation[data-theme='ink'] {
-  background: #262a26;
-  color: #f7f1e5;
-}
-.life-navigation[data-theme='ink'] button > span {
+.life-navigation button > span[data-ink] {
   color: #ded9cc;
 }
-.life-navigation[data-theme='ink'] button[aria-current] > span:first-child {
+.life-navigation button[aria-current] > span[data-ink]:first-child {
   color: #f7f1e5;
 }
-.life-navigation[data-theme='ink'] button[aria-current] > span:first-child::after {
+.life-navigation button[aria-current] > span[data-ink]:first-child::after {
   background: #e6a18b;
 }
-.life-navigation[data-theme='ink'] button:focus-visible {
+.life-navigation button:has(> span[data-ink]):focus-visible {
   outline-color: #e6a18b;
 }
 /* Brush and Reigandō chapters */
@@ -1572,7 +1577,6 @@ body::before {
     position: sticky;
     top: 0;
     z-index: 5;
-    background: var(--paper);
     flex-direction: row;
     overflow-x: auto;
     border-top: 1px solid var(--line);
