@@ -326,6 +326,46 @@ h2[id] {
   object-fit: contain;
 }
 
+/* Paper: fine grain and uneven tone laid over the page, scrolling with it like a sheet. */
+body {
+  position: relative;
+}
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E %3Cfilter id='g' x='0' y='0' width='1' height='1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E %3CfeColorMatrix values='0 0 0 0 0.24 0 0 0 0 0.2 0 0 0 0 0.14 1.1 0 0 0 -0.56'/%3E%3C/filter%3E %3Crect width='240' height='240' filter='url(%23g)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1024' height='1024'%3E %3Cfilter id='m' x='0' y='0' width='1' height='1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.00390625' numOctaves='3' seed='3' stitchTiles='stitch'/%3E %3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.38 0 0 0 0 0.25 0.55 0 0 0 -0.24'/%3E%3C/filter%3E %3Crect width='1024' height='1024' filter='url(%23m)'/%3E%3C/svg%3E");
+  background-size:
+    240px 240px,
+    1024px 1024px;
+  opacity: 0.5;
+}
+/* Musashi's ink paintings sit in the paper rather than on it. */
+.artwork-ink img {
+  mix-blend-mode: multiply;
+  filter: brightness(var(--ink-lift, 1.1)) saturate(0.85);
+  mask-image:
+    linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent),
+    linear-gradient(180deg, transparent, #000 7%, #000 97%, transparent);
+  mask-composite: intersect;
+}
+.brush-gallery .artwork-ink {
+  display: grid;
+  grid-template-rows: 510px auto;
+}
+.brush-gallery .artwork-ink img {
+  align-self: end;
+  justify-self: center;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
 /* His life: timeline and chapters */
 .life-section {
   padding-top: 82px;
@@ -1446,6 +1486,9 @@ h2[id] {
   }
   .brush-gallery .artwork img {
     height: 440px;
+  }
+  .brush-gallery .artwork-ink {
+    grid-template-rows: 440px auto;
   }
   .reigando-chapter {
     padding-top: 28px;

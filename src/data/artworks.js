@@ -5,6 +5,7 @@ const base = import.meta.env?.BASE_URL ?? '/';
 
 export const artworks = {
   shrike: {
+    ink: 1.08,
     src: `${base}images/figures/shrike.webp`,
     alt: 'A small shrike perched high on a long bare branch, painted in pale and dark ink on paper.',
     title: 'Shrike on a Withered Branch (Kobokumeigeki-zu)',
@@ -38,6 +39,7 @@ export const artworks = {
     height: 813,
   },
   hotei: {
+    ink: 1.12,
     src: `${base}images/figures/hotei.webp`,
     alt: 'Hotei bends over to watch two fighting cocks in an ink painting with broad black brushstrokes and open paper.',
     title: 'Hotei Watching a Cockfight',
@@ -135,6 +137,7 @@ export const artworks = {
     height: 1600,
   },
   cormorant: {
+    ink: 1.06,
     src: `${base}images/figures/cormorant.webp`,
     alt: 'A cormorant turns its long neck above a rock, its dark feathers formed from layered ink brushstrokes.',
     title: 'Cormorant (U-zu)',
