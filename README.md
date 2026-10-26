@@ -2,11 +2,6 @@
   <img src="assets/ronin-banner.webp" alt="RŌNIN, the life, writing and paintings of Miyamoto Musashi" width="100%"/>
 </p>
 
-<p align="center">
-  <strong>By his own count, he won more than sixty duels. He also painted this.</strong><br>
-  <sub>The life, writing and paintings of Miyamoto Musashi.</sub>
-</p>
-
 <p align="center"><a href="https://bytiagodev.github.io/ronin/"><strong>Read the site</strong></a></p>
 
 ---
