@@ -10,6 +10,9 @@
   --muted: #5f6257;
   --line: #cec8bb;
   --serif: 'Libre Caslon Display', Georgia, serif;
+  --serif-text: 'Libre Caslon Text', Georgia, serif;
+  --text-xs: 13px;
+  --text-sm: 14px;
   --serif-ja: 'Yu Mincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif;
   --page-gutter: max(32px, calc((100vw - 1248px) / 2));
   font-synthesis: style;
@@ -109,7 +112,7 @@ h2[id] {
   padding-right: max(32px, calc((100vw - 1248px) / 2));
 }
 .eyebrow {
-  font-size: 12px;
+  font-size: var(--text-xs);
   font-weight: 500;
   color: var(--red);
   line-height: 1.7;
@@ -132,7 +135,7 @@ h2[id] {
 }
 .editorial-link,
 .text-button {
-  font-size: 14px;
+  font-size: var(--text-sm);
   line-height: 1.7;
   text-decoration: underline;
   text-underline-offset: 5px;
@@ -150,7 +153,7 @@ h2[id] {
   justify-content: center;
   gap: 15px;
   padding: 13px 24px;
-  font-size: 14px;
+  font-size: var(--text-sm);
   line-height: 1.5;
   border: 1px solid transparent;
   transition: background 0.2s;
@@ -223,7 +226,7 @@ h2[id] {
   gap: 22px;
 }
 .main-nav a {
-  font-size: 12px;
+  font-size: var(--text-sm);
   line-height: 1.7;
   padding: 9px 0;
   color: var(--muted);
@@ -247,7 +250,7 @@ h2[id] {
   padding: 10px 13px;
   background: transparent;
   border: 1px solid #a9a797;
-  font-size: 12px;
+  font-size: var(--text-sm);
   line-height: 1.7;
   white-space: nowrap;
 }
@@ -305,7 +308,7 @@ h2[id] {
 }
 .artwork figcaption {
   margin-top: 14px;
-  font-size: 12px;
+  font-size: var(--text-xs);
   line-height: 1.7;
   color: var(--muted);
 }
@@ -353,13 +356,13 @@ h2[id] {
   text-align: left;
 }
 .life-navigation button > span:first-child {
-  font-family: var(--serif);
+  font-family: var(--serif-text);
   font-size: 23px;
   color: #51574a;
 }
 .life-navigation button > span:last-child {
   color: var(--muted);
-  font-size: 12px;
+  font-size: var(--text-xs);
   line-height: 1.55;
 }
 .life-navigation button[aria-current] {
@@ -378,7 +381,7 @@ h2[id] {
   border-bottom: 1px solid var(--line);
 }
 .chapter-year {
-  font-size: 14px;
+  font-size: var(--text-sm);
   color: var(--red);
   margin-bottom: 12px;
 }
@@ -407,7 +410,7 @@ h2[id] {
   border-top: 1px solid var(--line);
   padding-top: 18px;
   margin-top: 27px;
-  font-size: 12px;
+  font-size: var(--text-sm);
   line-height: 1.7;
 }
 .chapter-sources summary {
@@ -454,9 +457,9 @@ h2[id] {
   margin-bottom: 20px;
 }
 .quote-translation {
-  font-family: var(--serif);
-  font-size: 27px;
-  line-height: 1.4;
+  font-family: var(--serif-text);
+  font-size: 24px;
+  line-height: 1.45;
   max-width: 42ch;
   margin-bottom: 20px;
 }
@@ -464,7 +467,7 @@ h2[id] {
   display: flex;
   flex-wrap: wrap;
   gap: 6px 18px;
-  font-size: 12px;
+  font-size: var(--text-xs);
   line-height: 1.7;
   color: var(--muted);
 }
@@ -684,7 +687,7 @@ h2[id] {
 }
 .ring-reflection h4,
 .ring-exercise h4 {
-  font-size: 14px;
+  font-size: var(--text-sm);
   font-weight: 500;
   color: var(--red);
   margin-bottom: 10px;
@@ -703,7 +706,7 @@ h2[id] {
   margin-top: 10px;
 }
 .rings-source-note {
-  font-size: 12px;
+  font-size: var(--text-xs);
   line-height: 1.7;
   color: var(--muted);
   margin-top: 23px;
@@ -747,7 +750,7 @@ h2[id] {
   object-fit: cover;
 }
 .person-role {
-  font-size: 12px;
+  font-size: var(--text-xs);
   color: var(--red);
   line-height: 1.7;
   margin-bottom: 12px;
@@ -760,7 +763,7 @@ h2[id] {
   color: var(--red);
 }
 .people-card .person-dates {
-  font-size: 12px;
+  font-size: var(--text-xs);
   color: var(--muted);
 }
 .people-card p:not(.person-role):not(.person-dates) {
@@ -769,7 +772,7 @@ h2[id] {
   color: #444a3f;
 }
 .people-card .editorial-link {
-  font-size: 12px;
+  font-size: var(--text-xs);
 }
 /* His Japan */
 .world-section {
@@ -797,11 +800,11 @@ h2[id] {
   border-right: 0;
 }
 .era-tabs button > span:first-child {
-  font-family: var(--serif);
+  font-family: var(--serif-text);
   font-size: 29px;
 }
 .era-tabs button > span:last-child {
-  font-size: 12px;
+  font-size: var(--text-xs);
   line-height: 1.6;
 }
 .era-tabs button[aria-selected='true'] {
@@ -900,7 +903,7 @@ h2[id] {
 }
 .sources-list a,
 .profile-sources a {
-  font-size: 14px;
+  font-size: var(--text-sm);
   line-height: 1.7;
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -908,7 +911,7 @@ h2[id] {
 }
 .sources-list p,
 .profile-sources li p {
-  font-size: 14px;
+  font-size: var(--text-sm);
   color: var(--muted);
   line-height: 1.7;
   margin: 10px 0 0;
@@ -929,7 +932,7 @@ h2[id] {
   gap: 30px;
 }
 .site-footer p {
-  font-size: 14px;
+  font-size: var(--text-sm);
   color: var(--muted);
   margin: 0;
 }
@@ -942,7 +945,7 @@ h2[id] {
   padding-top: 23px;
   padding-bottom: 23px;
   border-bottom: 1px solid var(--line);
-  font-size: 12px;
+  font-size: var(--text-xs);
   line-height: 1.7;
   color: var(--muted);
 }
@@ -974,7 +977,7 @@ h2[id] {
   color: var(--red);
 }
 .profile-identity > span:last-child {
-  font-size: 14px;
+  font-size: var(--text-sm);
   color: var(--muted);
 }
 .profile-standfirst {
@@ -1012,12 +1015,12 @@ h2[id] {
   border-bottom: 1px solid var(--line);
 }
 .profile-facts dt {
-  font-size: 12px;
+  font-size: var(--text-xs);
   color: var(--red);
   margin-bottom: 10px;
 }
 .profile-facts dd {
-  font-size: 14px;
+  font-size: var(--text-sm);
   line-height: 1.7;
   margin: 0;
 }
@@ -1043,7 +1046,7 @@ h2[id] {
   padding: 13px 0;
   background: transparent;
   border-bottom: 1px solid var(--line);
-  font-size: 14px;
+  font-size: var(--text-sm);
   line-height: 1.6;
 }
 .profile-contents button:hover {
@@ -1075,7 +1078,7 @@ h2[id] {
   border-top: 1px solid var(--line);
 }
 .profile-chronology li > span {
-  font-family: var(--serif);
+  font-family: var(--serif-text);
   font-size: 25px;
   color: var(--red);
 }
@@ -1165,7 +1168,7 @@ h2[id] {
   gap: 12px;
 }
 .journal-form label {
-  font-size: 14px;
+  font-size: var(--text-sm);
   font-weight: 500;
 }
 .journal-form select,
@@ -1192,7 +1195,7 @@ h2[id] {
   gap: 15px;
 }
 .journal-form-footer > span {
-  font-size: 12px;
+  font-size: var(--text-xs);
   color: var(--muted);
 }
 .journal-status {
@@ -1203,7 +1206,7 @@ h2[id] {
   margin: 15px 0 25px;
 }
 .form-status {
-  font-size: 14px;
+  font-size: var(--text-sm);
   line-height: 1.7;
   color: var(--red);
   margin: 0;
@@ -1247,11 +1250,11 @@ h2[id] {
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  font-size: 12px;
+  font-size: var(--text-xs);
   color: var(--muted);
 }
 .entry-meta button {
-  font-size: 12px;
+  font-size: var(--text-xs);
 }
 .journal-entries p {
   font-size: 16px;
@@ -1331,7 +1334,7 @@ h2[id] {
   .journal-trigger {
     padding: 9px;
     gap: 7px;
-    font-size: 12px;
+    font-size: var(--text-xs);
   }
   .main-nav {
     padding-left: 24px;
@@ -1404,7 +1407,7 @@ h2[id] {
     font-size: 22px;
   }
   .life-navigation button > span:last-child {
-    font-size: 12px;
+    font-size: var(--text-xs);
     max-width: 130px;
   }
   .life-chapter[id] {
@@ -1469,7 +1472,7 @@ h2[id] {
     flex-direction: column;
     gap: 9px;
     padding: 15px 5px;
-    font-size: 14px;
+    font-size: var(--text-sm);
     min-width: 0;
     border-bottom: 0;
     border-right: 1px solid #c9c1b1;
@@ -1549,7 +1552,7 @@ h2[id] {
   .profile-breadcrumb {
     padding-top: 20px;
     padding-bottom: 20px;
-    font-size: 12px;
+    font-size: var(--text-xs);
   }
   .profile-hero {
     grid-template-columns: 1fr;

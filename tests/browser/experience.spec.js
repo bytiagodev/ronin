@@ -65,17 +65,17 @@ async function checkVisibleCopyAndFonts(page) {
       )
         continue;
       const size = Number.parseFloat(getComputedStyle(element).fontSize);
-      if (size < 12) failures.push({ text: text.slice(0, 70), size });
+      if (size < 13) failures.push({ text: text.slice(0, 70), size });
     }
     for (const control of document.querySelectorAll('input, textarea, select')) {
       if (control.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true })) {
         const size = Number.parseFloat(getComputedStyle(control).fontSize);
-        if (size < 12) failures.push({ text: control.tagName, size });
+        if (size < 13) failures.push({ text: control.tagName, size });
       }
     }
     return failures;
   });
-  expect(smallText, 'Every rendered text fragment should be at least 12px').toEqual([]);
+  expect(smallText, 'Every rendered text fragment should be at least 13px').toEqual([]);
   expect(await page.locator('body').innerText()).not.toMatch(/[\u2013\u2014]/);
 }
 
