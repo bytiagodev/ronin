@@ -319,13 +319,7 @@ h2[id] {
   max-width: 500px;
   color: var(--muted);
   font-size: 17px;
-}
-.hero-buttons {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  margin-top: 30px;
-  flex-wrap: wrap;
+  margin-bottom: 0;
 }
 .artwork {
   margin: 0;
@@ -1587,9 +1581,6 @@ body::before {
   .hero-description {
     font-size: 17px;
   }
-  .hero-buttons {
-    gap: 21px;
-  }
   .hero-artwork {
     --painting-height: 400px;
   }
@@ -1851,10 +1842,6 @@ body::before {
     width: 100%;
     height: 290px;
   }
-  .hero-buttons {
-    align-items: flex-start;
-    flex-direction: column;
-  }
   .profile-hero h1 {
     font-size: 48px;
   }
@@ -1869,8 +1856,7 @@ body::before {
     min-height: 44px;
     padding-block: 0;
   }
-  .wordmark,
-  .hero-buttons .editorial-link {
+  .wordmark {
     min-height: 44px;
     display: inline-flex;
     align-items: center;

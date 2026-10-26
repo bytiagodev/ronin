@@ -100,7 +100,7 @@ test.afterEach(async ({ page }) => {
   );
 });
 
-test('the homepage follows Musashi with an attributed painting and two distinct starting points', async ({
+test('the homepage follows Musashi with an attributed painting and no calls to action', async ({
   page,
 }) => {
   await expect(page).toHaveTitle('RŌNIN | Miyamoto Musashi');
@@ -116,14 +116,8 @@ test('the homepage follows Musashi with an attributed painting and two distinct 
   await expect(hero.locator('img')).toHaveAttribute('src', /\/images\/figures\/shrike\.webp$/);
   await expect(hero.locator('figcaption')).toContainText('Miyamoto Musashi');
   await expect(hero.locator('figcaption')).toContainText('Shrike on a Withered Branch');
-  await expect(hero.getByRole('link', { name: 'Start his story', exact: true })).toHaveAttribute(
-    'href',
-    '#life',
-  );
-  await expect(
-    hero.getByRole('link', { name: 'Read the five scrolls', exact: true }),
-  ).toHaveAttribute('href', '#five-rings');
-  await expect(hero.locator('.hero-buttons a')).toHaveCount(2);
+  // The only link in the hero is the painting's rights record; the page itself leads on.
+  await expect(hero.getByRole('link')).toHaveCount(1);
   await expect(hero.locator('.eyebrow [lang="ja"]')).toHaveText('宮本武蔵');
   await expect(hero.locator('.hero-source, .hero-bottom')).toHaveCount(0);
   const paintingWidth = await hero

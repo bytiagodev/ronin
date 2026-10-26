@@ -120,14 +120,6 @@ function Hero() {
           Follow Musashi from his first duel at thirteen to his final years in Kumamoto. Meet his
           rivals and patrons, and see the paintings and writing he left behind.
         </p>
-        <div className="hero-buttons">
-          <a className="button button-red" href="#life">
-            Start his story
-          </a>
-          <a className="editorial-link" href="#five-rings">
-            Read the five scrolls
-          </a>
-        </div>
       </div>
     </section>
   );
