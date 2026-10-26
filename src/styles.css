@@ -15,7 +15,7 @@
   --text-sm: 14px;
   --serif-ja: 'Yu Mincho', 'Hiragino Mincho ProN', 'Noto Serif JP', serif;
   --page-gutter: max(32px, calc((100vw - 1248px) / 2));
-  font-synthesis: style;
+  font-synthesis: none;
   scroll-behavior: smooth;
   scroll-padding-top: 28px;
 }
@@ -108,8 +108,8 @@ h2[id] {
 }
 /* Shared layout, labels, links and buttons */
 .section-shell {
-  padding-left: max(32px, calc((100vw - 1248px) / 2));
-  padding-right: max(32px, calc((100vw - 1248px) / 2));
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
 }
 .eyebrow {
   font-size: var(--text-xs);
@@ -194,7 +194,7 @@ h2[id] {
 /* Header */
 .site-header {
   min-height: 90px;
-  padding: 18px max(28px, calc((100vw - 1320px) / 2));
+  padding: 18px var(--page-gutter);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -504,8 +504,12 @@ h2[id] {
   background: #262a26;
 }
 .duel-chapter .duel-artwork {
-  margin: 26px 0 0;
-  order: 1;
+  margin: 0 0 40px;
+}
+.duel-chapter .duel-artwork figcaption {
+  max-width: 62ch;
+  margin: 0;
+  text-shadow: 0 1px 3px #262a26;
 }
 .duel-chapter .duel-artwork img {
   top: 0;
@@ -1277,7 +1281,7 @@ h2[id] {
     top: 100%;
     left: 0;
     right: 0;
-    padding: 15px 32px 25px;
+    padding: 15px var(--page-gutter) 25px;
     background: var(--paper);
     border-bottom: 1px solid var(--line);
   }
@@ -1312,12 +1316,9 @@ h2[id] {
   :root {
     --page-gutter: 24px;
   }
-  .section-shell {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
   .site-header {
-    padding: 16px 20px;
+    padding-top: 16px;
+    padding-bottom: 16px;
     gap: 10px;
   }
   .wordmark {
@@ -1337,8 +1338,8 @@ h2[id] {
     font-size: var(--text-xs);
   }
   .main-nav {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
   }
   .section-heading {
     display: block;
