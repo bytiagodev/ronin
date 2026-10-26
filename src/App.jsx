@@ -162,7 +162,8 @@ function ReadingRoom() {
         <div className="reading-accordions">
           <details>
             <summary>
-              Terms in the story<span aria-hidden="true">+</span>
+              Terms in the story
+              <span aria-hidden="true" />
             </summary>
             <dl className="glossary">
               {glossary.map((entry) => (
@@ -177,7 +178,8 @@ function ReadingRoom() {
           </details>
           <details>
             <summary>
-              Sources and further reading<span aria-hidden="true">+</span>
+              Sources and further reading
+              <span aria-hidden="true" />
             </summary>
             <ul className="sources-list">
               {readingSources.map((source) => (
@@ -192,7 +194,8 @@ function ReadingRoom() {
           </details>
           <details>
             <summary>
-              About this site<span aria-hidden="true">+</span>
+              About this site
+              <span aria-hidden="true" />
             </summary>
             <div className="about-guide">
               <p>
