@@ -30,7 +30,7 @@ RŌNIN is the place I wanted while I was reading about him: his life told as one
 
 ## Water · The look
 
-The site borrows its look from his paintings: ivory paper, black ink and one vermilion, with a lot of empty space. The hero is his own Shrike on a Withered Branch, not an illustration of him. Libre Caslon Display carries the headings and DM Sans the reading text. The page goes dark once, for the crossing to Ganryūjima, and the timeline darkens with it as you scroll past.
+The site borrows its look from his paintings: ivory paper, black ink and one vermilion, with a lot of empty space. The hero is his own Shrike on a Withered Branch, not an illustration of him. Libre Caslon Display carries the headings, DM Sans the reading text and Yuji Syuku, a brush face, his words in Japanese. The page goes dark once, for the crossing to Ganryūjima, and the timeline darkens with it as you scroll past.
 
 ## Fire · The build
 
@@ -55,7 +55,7 @@ Image records, rights and dimensions are listed in [public/images/figures/README
 
 ## Void · What remains
 
-Code under the [MIT licence](LICENSE). The paintings and prints are in the public domain, as recorded for each file. DM Sans, Libre Caslon Display and Noto Serif JP, which the seal is drawn from, are used under the SIL Open Font License.
+Code under the [MIT licence](LICENSE). The paintings and prints are in the public domain, as recorded for each file. DM Sans, Libre Caslon Display, Libre Caslon Text, Yuji Syuku and Noto Serif JP, which the seal is drawn from, are used under the SIL Open Font License.
 
 ---
 

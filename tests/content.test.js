@@ -202,3 +202,18 @@ test('published content uses plain hyphens instead of either prohibited dash cha
   });
   assert.equal(/[\u2013\u2014]/u.test(publishedContent), false);
 });
+
+test('the brush font subset covers every Japanese character the site sets in it', async () => {
+  const subset = await readFile(
+    new URL('../public/fonts/yuji-syuku-subset.txt', import.meta.url),
+    'utf8',
+  );
+  const japanese = [
+    ...Object.values(musashiQuotes).map((quote) => quote.japanese),
+    ...rings.map((ring) => ring.kanji),
+    ...people.map((person) => person.kanji),
+    ...glossary.map((entry) => entry.kanji),
+  ].join('');
+  const missing = [...new Set(japanese)].filter((character) => !subset.includes(character));
+  assert.deepEqual(missing, [], 'Run scripts/build-brush-font.py after adding Japanese text');
+});
