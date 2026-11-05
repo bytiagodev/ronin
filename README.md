@@ -6,9 +6,9 @@
 
 ---
 
-I started reading about samurai and ended up reading about one man. Miyamoto Musashi fought his first duel at thirteen, crossed the water to face Sasaki Kojirō, spent decades moving between towns and patrons, and in his last years sat in a cave near Kumamoto writing a book about strategy. He also painted birds with a handful of ink strokes and left most of the paper empty around them.
+I started reading about samurai and ended up reading about one man. Miyamoto Musashi fought his first duel at thirteen and crossed the water to face Sasaki Kojirō. He spent decades moving between towns and patrons, and in his last years sat in a cave near Kumamoto writing a book about strategy. He also painted birds with a handful of ink strokes and left most of the paper empty around them.
 
-RŌNIN is the place I wanted while I was reading about him: his life told as one story, his own words wherever they survive, and the paintings he left behind, all on one page.
+RŌNIN puts what I found in one place: his life told as one story, his own words wherever they survive and the paintings he left behind, all on one page.
 
 ## Earth · The ground
 
@@ -44,7 +44,7 @@ npm run build
 
 ## Wind · The other schools
 
-In the Five Rings, Wind is the scroll about other schools. Here it is about everyone whose work this site leans on: Japanese museums and municipal guides, the University of Tsukuba, transcriptions of the original Five Rings text, and the collections that keep the paintings and prints. Every chapter links its sources. Where the accounts disagree, about his birth, the number of his duels or what happened on Ganryūjima, the site says so once, in its own note.
+In the Five Rings, Wind is the scroll about other schools. Here it is about everyone whose work this site leans on: Japanese museums and municipal guides, the University of Tsukuba, transcriptions of the original Five Rings text and the collections that keep the paintings and prints. Every chapter links its sources. Where the accounts disagree, about his birth, the number of his duels or what happened on Ganryūjima, the site says so once, in its own note.
 
 Image records, rights and dimensions are listed in [public/images/figures/README.md](public/images/figures/README.md).
 
