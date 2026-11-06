@@ -1,24 +1,3 @@
-import { lifeSources } from './musashi.js';
-import { people } from './people.js';
-import { historicalEras } from './context.js';
-import { ringSources } from './rings.js';
-
-const sourceRecords = [
-  ...lifeSources,
-  ...people.flatMap((person) => person.sources),
-  ...historicalEras.map((era) => ({
-    ...era.source,
-    note: 'Historical context for Musashi’s lifetime.',
-  })),
-  ...ringSources.map((source) => ({
-    title: source.title,
-    url: source.href,
-    note: 'The text and its five scrolls.',
-  })),
-];
-export const readingSources = [
-  ...new Map(sourceRecords.map((source) => [source.url, source])).values(),
-];
 export const glossary = [
   {
     term: 'Rōnin',

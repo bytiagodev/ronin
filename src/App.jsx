@@ -9,7 +9,7 @@ import Journal from './components/Journal.jsx';
 import Artwork from './components/Artwork.jsx';
 import { artworks } from './data/artworks.js';
 import { findProfile } from './data/profiles.js';
-import { glossary, readingSources } from './data/reading.js';
+import { glossary } from './data/reading.js';
 import { readPageRoute } from './lib/routes.js';
 
 const navigation = [
@@ -134,15 +134,15 @@ function ReadingRoom() {
     >
       <div className="section-heading">
         <h2 id="reading-title">Reading room</h2>
-        <p>Sources for Musashi’s life, his writing and the people around him.</p>
+        <p>How to read the records behind his story, and the terms it uses.</p>
       </div>
       <div className="reading-layout">
         <div className="reading-note">
           <h3>Read Musashi alongside the records.</h3>
           <p>
             The opening of the Five Rings is his own account of his training and victories. Letters,
-            surviving paintings and later memorials provide other views of the man. The sources
-            below identify which kind of evidence supports each part of the story.
+            surviving paintings and later memorials provide other views of the man. Each chapter and
+            profile lists the records behind it, so you can check a claim where it is made.
           </p>
           <a
             className="editorial-link"
@@ -169,22 +169,6 @@ function ReadingRoom() {
                 </div>
               ))}
             </dl>
-          </details>
-          <details>
-            <summary>
-              Sources and further reading
-              <span aria-hidden="true" />
-            </summary>
-            <ul className="sources-list">
-              {readingSources.map((source) => (
-                <li key={source.url}>
-                  <a href={source.url} target="_blank" rel="noreferrer">
-                    {source.title}
-                  </a>
-                  <p>{source.note}</p>
-                </li>
-              ))}
-            </ul>
           </details>
           <details>
             <summary>

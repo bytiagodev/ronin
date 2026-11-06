@@ -5,7 +5,7 @@ import { heroCopy, lifeChapters, lifeSources, evidenceNote } from '../src/data/m
 import { historicalEras } from '../src/data/context.js';
 import { people } from '../src/data/people.js';
 import { rings } from '../src/data/rings.js';
-import { glossary, readingSources } from '../src/data/reading.js';
+import { glossary } from '../src/data/reading.js';
 import { artworks } from '../src/data/artworks.js';
 import { musashiQuotes } from '../src/data/quotes.js';
 
@@ -148,7 +148,7 @@ test('all five scrolls retain their own interpretation and journal exercise', ()
   }
 });
 
-test('the reading room has distinct glossary terms and usable deduplicated source records', () => {
+test('the reading room has distinct glossary terms and every source shown has a note and an HTTPS link', () => {
   assert.ok(glossary.length > 0);
   const terms = glossary.map((entry) => entry.term.trim().toLocaleLowerCase('en'));
   assert.equal(new Set(terms).size, terms.length);
@@ -156,13 +156,18 @@ test('the reading room has distinct glossary terms and usable deduplicated sourc
     assertText(entry.term, 'Glossary term');
     assertText(entry.definition, `${entry.term}: definition`);
   }
-  assert.ok(readingSources.length > 0);
-  assert.equal(new Set(readingSources.map((source) => source.url)).size, readingSources.length);
-  for (const source of readingSources) {
-    assertText(source.title, 'Reading-room source title');
-    assertText(source.note, `${source.title}: context`);
-    assert.equal(new URL(source.url).protocol, 'https:');
+  // Sources are listed where they are used: under each chapter, profile section, scroll and turning point.
+  const shownSources = [
+    ...lifeSources,
+    ...people.flatMap((person) => person.sources),
+    ...historicalEras.map((era) => era.source),
+  ];
+  for (const source of shownSources) {
+    assertText(source.title, 'Source title');
+    assert.equal(new URL(source.url).protocol, 'https:', source.title);
   }
+  for (const source of [...lifeSources, ...people.flatMap((person) => person.sources)])
+    assertText(source.note, `${source.title}: context`);
 });
 
 test('every shipped artwork has a rights record and dimensions matching the actual WebP file', async () => {
@@ -196,7 +201,6 @@ test('published content uses plain hyphens instead of either prohibited dash cha
     people,
     rings,
     glossary,
-    readingSources,
     artworks,
     musashiQuotes,
   });

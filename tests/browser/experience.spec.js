@@ -507,13 +507,8 @@ test('historical images have truthful dimensions and the reading room exposes re
   await glossary.locator('summary').click();
   await expect(glossary.locator('dl')).toBeVisible();
   expect(await glossary.locator('dt').count()).toBeGreaterThan(3);
-  const sourceList = readingRoom
-    .locator('details')
-    .filter({ has: page.locator('summary', { hasText: 'Sources and further reading' }) });
-  await sourceList.locator('summary').click();
-  expect(await sourceList.getByRole('link').count()).toBeGreaterThan(5);
-  for (const source of await sourceList.getByRole('link').all())
-    await expect(source).toHaveAttribute('href', /^https:\/\//);
+  // Sources live under the sections that cite them, so the reading room does not repeat them.
+  await expect(readingRoom.locator('summary', { hasText: 'Sources' })).toHaveCount(0);
   const about = readingRoom
     .locator('details')
     .filter({ has: page.locator('summary', { hasText: 'About this site' }) });
