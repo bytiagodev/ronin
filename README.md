@@ -38,6 +38,7 @@ npm run dev
 
 ```sh
 npm test              # content and journal tests
+npm run lint          # ESLint with React's rules
 npm run test:browser  # desktop and mobile browser tests (needs: npx playwright install chromium)
 npm run build
 ```

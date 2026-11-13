@@ -3,8 +3,6 @@ import Icon from './Icon.jsx';
 
 export default function Modal({ title, onClose, children, className = '' }) {
   const dialogRef = useRef(null);
-  const closeHandlerRef = useRef(onClose);
-  closeHandlerRef.current = onClose;
 
   useEffect(() => {
     const previouslyFocusedElement = document.activeElement;
@@ -26,10 +24,10 @@ export default function Modal({ title, onClose, children, className = '' }) {
       aria-labelledby="modal-title"
       onCancel={(event) => {
         event.preventDefault();
-        closeHandlerRef.current();
+        onClose();
       }}
       onClick={(event) => {
-        if (event.target === event.currentTarget) closeHandlerRef.current();
+        if (event.target === event.currentTarget) onClose();
       }}
     >
       <div className="modal-content">
